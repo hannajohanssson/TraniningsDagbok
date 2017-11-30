@@ -24,7 +24,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Workouts* workouts;
+    Workouts workouts;
     workoutWindow *mWorkoutWindow;
     //friend class workoutWindow;
 

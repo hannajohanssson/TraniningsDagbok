@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
 
+
     ui->setupUi(this);
 
     //hämtat från minimal
@@ -81,7 +82,7 @@ void MainWindow::on_pushButton_clicked()
 
 
     //från test
-    mWorkoutWindow = new workoutWindow(workouts, this);
+    mWorkoutWindow = new workoutWindow(&workouts, this);
     mWorkoutWindow -> show();
 
 
