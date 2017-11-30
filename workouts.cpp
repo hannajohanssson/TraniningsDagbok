@@ -1,16 +1,30 @@
 #include "workouts.h"
-#include <QFile>
-#include <QDebug>
-#include <QTextStream>
-#include <QCoreApplication>         //behövs??
-#include <QDir>
+//#include <QFile>
+//#include <QDebug>
+//#include <QTextStream>
+//#include <QCoreApplication>         //behövs??
+//#include <QDir>
+//#include <QFileInfo>
 
 
 
 Workouts::Workouts(int date, QString &workout)
 {
+    this->date=date;
+    this->workout=workout;
+    count =0;
+    capacity = 20;
+    workoutsAll= new Workouts[capacity];
+    //readFromFile();
+}
+
+Workouts::Workouts()
+{
     date = 0;
     workout ="";
+    count =0;
+    capacity = 20;
+    workoutsAll = new Workouts[capacity];
 }
 
 Workouts::~Workouts()
@@ -29,7 +43,7 @@ void Workouts::setDate(const int date)      //om två träningspass på en dag -
     this->date=date;
 }
 
-QString  Workouts::getWorkout() const
+QString Workouts::getWorkout() const
 {
     return workout;
 }
@@ -58,38 +72,60 @@ QString Workouts::toString() const
 }
 
 //från dirs
-//void Workouts::saveToFile(QString fileName)
-//{
-//    QFile file(filename);
+void Workouts::saveToFile(QString fileName)
+{
+    QFile mFile(fileName);
 
-//    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
+    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
+    {
+        qDebug() << "Could not open file for writing";
+        return;
+    }
+    QTextStream out (&mFile);
+    out << toString() << "\n";
+//spara alla mha array
+
+    mFile.flush();
+    mFile.close();                          //om ngt skrivs - stäng den igen!
+}
+
+void Workouts::readFromFile(QString fileName)
+{
+    QFile mFile(fileName);
+
+    if(!mFile.open(QFile::ReadOnly | QFile::Text))
+    {
+        qDebug() << "Could not open file for reading";
+        return;
+    }
+    QTextStream in (&mFile);
+    QString mText = in.readAll();
+
+    qDebug () << mText;
+
+    mFile.flush();
+    mFile.close();
+
+}
+
+void Workouts::addWorkout(int date, const QString &workout)
+{
+
+    //expandering
+
+    //arr [counter ] = new klassnamn (date, namn)
+    //workoutsAll[count] = new Workouts(date, workout);
+
+//    if (count < capacity)
 //    {
-//        qDebug() << "Could not open file for writing";
-//        return;
+//        workoutsAll[count].setDate();
+//        workoutsAll[count].setWorkout();
+//        count ++;
 //    }
-//    QTextStream out (&mFile);
-//    out << "Hello World";
 
-//    mFile.flush();
-//    mFile.close();                          //om ngt skrivs - stäng den igen!
-//}
 
-//void Workouts::readFromFile(QString fileName)
-//{
-//    QFile mFile(Filename);
 
-//    if(!mFile.open(QFile::ReadOnly | QFile::Text))
-//    {
-//        qDebug() << "Could not open file for reading";
-//        return;
-//    }
-//    QTextStream in (&mFile);
-//    QString mText = in.readAll();
-
-//    qDebug () << mText;
-
-//    mFile.flush();
-//    mFile.close();
+}
 
 
     //Lägga till i main!

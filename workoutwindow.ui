@@ -45,12 +45,19 @@
      <x>190</x>
      <y>32</y>
      <width>344</width>
-     <height>73</height>
+     <height>61</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QLabel" name="label_date">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Date (YYMMDD):</string>
       </property>
@@ -65,10 +72,17 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>80</y>
+     <y>90</y>
      <width>81</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Workout:</string>

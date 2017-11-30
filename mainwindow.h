@@ -24,9 +24,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Workouts* workouts;
+    workoutWindow *mWorkoutWindow;
+    //friend class workoutWindow;
 
     //från test //pekare
-    workoutWindow *mWorkoutWindow;
+    //workoutWindow *mWorkoutWindow;
 
 
 };

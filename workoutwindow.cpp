@@ -5,11 +5,13 @@
 
 
 
-workoutWindow::workoutWindow(QWidget *parent) :
+workoutWindow::workoutWindow(Workouts* workouts,  QWidget *parent) :
     QDialog(parent),
     ui(new Ui::workoutWindow)
 {
     ui->setupUi(this);
+    this-> workouts = workouts;
+
     //ui->pushButton->hide();
     //ui->pushButton_2->hide();
     //ui->pushButton_4->hide();
@@ -55,5 +57,6 @@ void workoutWindow::on_pushButton_save_clicked()
 
     QMessageBox::information(this, "Add workout", "The workout has been added.");
 
+    //workouts->addWorkout(date, workoutText);
 
 }

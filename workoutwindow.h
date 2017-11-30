@@ -2,6 +2,7 @@
 #define WORKOUTWINDOW_H
 
 #include <QDialog>
+#include "workouts.h"
 
 namespace Ui {
 class workoutWindow;
@@ -12,7 +13,7 @@ class workoutWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit workoutWindow(QWidget *parent = 0);
+    explicit workoutWindow(Workouts* workouts, QWidget *parent = 0);
     ~workoutWindow();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 
 private:
     Ui::workoutWindow *ui;
+    Workouts* workouts;
 };
 
 #endif // WORKOUTWINDOW_H

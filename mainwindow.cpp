@@ -4,12 +4,20 @@
 #include "workoutwindow.h"
 #include <QApplication>
 #include <Qlabel>
+#include <QCoreApplication>
+#include <QDebug>
+#include <QDir>
+#include <QFileInfo>
+#include <QString>
+#include <QFile>
+#include <QTextStream>
 
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
 
     //hämtat från minimal
@@ -35,6 +43,26 @@ MainWindow::MainWindow(QWidget *parent) :
     //från test
     // setCentralWidget((ui->plainTextEdit));      //lägga in fritext - spara träningspass?
 
+    Workouts w1;
+    w1.setDate(171130);
+    w1.setWorkout("Running 10km");
+
+        QString mFilename = "C:/Qt/Projektet/TraniningsDagbok/myfile.txt";
+
+        w1.saveToFile(mFilename);
+        w1.readFromFile(mFilename);
+
+
+
+
+//        QCoreApplication a(argc, argv);
+
+//        QString mFilename = "C:\Qt\Projektet\Testfiler, försök\myfile.txt";
+
+//        Write(mFilename);
+//        Read(mFilename);
+
+//        return a.exec();
 
 
 }
@@ -53,8 +81,10 @@ void MainWindow::on_pushButton_clicked()
 
 
     //från test
-    mWorkoutWindow = new workoutWindow(this);
+    mWorkoutWindow = new workoutWindow(workouts, this);
     mWorkoutWindow -> show();
+
+
 
 
 
