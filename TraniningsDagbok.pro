@@ -27,12 +27,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     workouts.cpp \
-    workoutwindow.cpp
+    workoutwindow.cpp \
+    workoutregister.cpp \
+    pr.cpp \
+    prregister.cpp
 
 HEADERS += \
         mainwindow.h \
     workouts.h \
-    workoutwindow.h
+    workoutwindow.h \
+    workoutregister.h \
+    pr.h \
+    prregister.h
 
 FORMS += \
         mainwindow.ui \

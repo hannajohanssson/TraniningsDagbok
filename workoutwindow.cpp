@@ -1,11 +1,12 @@
 #include "workoutwindow.h"
 #include "ui_workoutwindow.h"
 #include "workouts.h"
+#include "workoutregister.h"
 #include <QMessageBox>
 
 
 
-workoutWindow::workoutWindow(Workouts* workouts,  QWidget *parent) :
+workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     QDialog(parent),
     ui(new Ui::workoutWindow)
 {
@@ -52,11 +53,12 @@ void workoutWindow::on_pushButton_2_clicked()
 
 void workoutWindow::on_pushButton_save_clicked()
 {
+
     QString date = ui->lineEdit_date->text();       //göra till en int?
     QString workoutText = ui->lineEdit_workout->text();
 
     QMessageBox::information(this, "Add workout", "The workout has been added.");
 
-    //workouts->addWorkout(date, workoutText);
+    workouts->addWorkout(date.toInt(), workoutText);
 
 }

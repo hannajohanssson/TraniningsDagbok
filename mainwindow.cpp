@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "workouts.h"
 #include "workoutwindow.h"
+#include "workoutregister.h"
 #include <QApplication>
 #include <Qlabel>
 #include <QCoreApplication>
@@ -44,11 +45,23 @@ MainWindow::MainWindow(QWidget *parent) :
     //från test
     // setCentralWidget((ui->plainTextEdit));      //lägga in fritext - spara träningspass?
 
-    Workouts w1;
-    w1.setDate(171130);
-    w1.setWorkout("Running 10km");
+//    Workouts w1;
+//    w1.setDate(171130);
+//    w1.setWorkout("Running 10km");
+
+//        QString mFilename = "C:/Qt/Projektet/TraniningsDagbok/myfile.txt";
+
+
+//        w1.saveToFile(mFilename);
+//        w1.readFromFile(mFilename);
+
+
+
+        WorkoutRegister w1;
+        w1.addWorkout(171130, "Running 10km");
 
         QString mFilename = "C:/Qt/Projektet/TraniningsDagbok/myfile.txt";
+
 
         w1.saveToFile(mFilename);
         w1.readFromFile(mFilename);

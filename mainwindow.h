@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "workouts.h"  //behövs det?
 #include "workoutwindow.h"
+#include "workoutregister.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,7 +25,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Workouts workouts;
+    WorkoutRegister workouts;
     workoutWindow *mWorkoutWindow;
     //friend class workoutWindow;
 
