@@ -2,13 +2,11 @@
 
 prRegister::prRegister()
 {
-    name = "";
+    count = 0;
+    capacity = 20;
+    prs = new pr*[capacity];       //pekare om dubbelpekare
 }
 
-prRegister::prRegister(const QString &name)
-{
-    this->name = name;
-}
 
 prRegister::~prRegister()
 {
@@ -37,15 +35,6 @@ void prRegister::readFromFile(QString fileName)
 
 void prRegister::Expand()
 {
-//    capacity = capacity * 2;
-//    Workouts** temp = new Workouts*[capacity];
-//    for (int i =0; i<count; i++)
-//    {
-//        temp[i] = workouts[i];
-//    }
-//    delete[] workouts;
-//    workouts = temp;
-
     capacity = capacity *2;
     pr** temp = new pr*[capacity];
     for (int i=0; i<count; i++)

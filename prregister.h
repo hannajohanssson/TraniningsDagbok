@@ -9,7 +9,7 @@ class prRegister
 {
 public:
     prRegister();
-    prRegister(const QString& name);
+
     ~prRegister();
 
 
