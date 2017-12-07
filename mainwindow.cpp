@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
         WorkoutRegister w1;
-        w1.addWorkout(171130, "Running 10km");
+        w1.addWorkout(171205, "Running 10km");
 
         QString mFilename = "C:/Qt/Projektet/TraniningsDagbok/myfile.txt";
 

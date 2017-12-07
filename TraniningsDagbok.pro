@@ -30,7 +30,11 @@ SOURCES += \
     workoutwindow.cpp \
     workoutregister.cpp \
     pr.cpp \
-    prregister.cpp
+    prregister.cpp \
+    workoutbank.cpp \
+    workoutbankregister.cpp \
+    workoutweight.cpp \
+    workoutrunning.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +42,11 @@ HEADERS += \
     workoutwindow.h \
     workoutregister.h \
     pr.h \
-    prregister.h
+    prregister.h \
+    workoutbank.h \
+    workoutbankregister.h \
+    workoutweight.h \
+    workoutrunning.h
 
 FORMS += \
         mainwindow.ui \

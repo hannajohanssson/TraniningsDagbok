@@ -28,12 +28,10 @@ public:
 
     void addWorkout(int date, const QString& workout);
 
-    //returnerar samtlifa workouts
+    //returnerar samtliga workouts
     QString toString() const;
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);
-
-
 
 };
 

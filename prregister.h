@@ -26,6 +26,8 @@ private:
     int capacity;
     int count;
 
+    int findPr(const pr& f) const;
+
     void Expand();
 
 
