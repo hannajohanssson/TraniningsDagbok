@@ -5,6 +5,8 @@
 #include "workouts.h"  //behövs det?
 #include "workoutwindow.h"
 #include "workoutregister.h"
+#include "workoutbankregister.h"
+#include "prwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,14 +25,17 @@ private slots:
 
 
 
+    void on_pushButtonPR_clicked();
+
 private:
     Ui::MainWindow *ui;
     WorkoutRegister workouts;
     workoutWindow *mWorkoutWindow;
-    //friend class workoutWindow;
 
-    //från test //pekare
-    //workoutWindow *mWorkoutWindow;
+    workoutBankRegister workoutbanks;
+    PRwindow *mPRwindow;
+
+
 
 
 };

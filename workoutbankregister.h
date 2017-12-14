@@ -3,6 +3,7 @@
 
 #include "workoutweight.h"
 #include "workoutrunning.h"
+#include "workoutbank.h"
 
 
 class workoutBankRegister
@@ -15,8 +16,10 @@ private:
     void Expand();
 
 public:
+//    workoutBankRegister();  //behövs tom??
     workoutBankRegister(int capacity = 10);
     ~workoutBankRegister();
+
 
     bool addWorkoutWeight(const QString& name, const QString& date, int weight, int reps);
 
@@ -24,11 +27,16 @@ public:
 
     QString getAllString() const;
 
+    int FindWorkout(QString& name, QString& date);
+
     //lägga till funktioner här som sorterar efter namn och vikt tex
 
 
+    bool allWorkoutWeightAsString(QString* stringArr, int capacityOfStringArr) const;
+    //gör likadan för löpning?
 
 
+    int getNrOfWorkoutsPR() const;
     int getNrOfWorkoutsWeight() const;      //behövs?
     int getNrOfWorkoutsRunning() const;
 

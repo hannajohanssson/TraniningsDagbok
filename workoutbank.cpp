@@ -1,8 +1,5 @@
 #include "workoutbank.h"
 
-
-
-
 workoutBank::workoutBank(const QString &name, const QString &date)
 {
     this->name = name;
@@ -20,10 +17,22 @@ workoutBank::~workoutBank()
 
 }
 
-bool workoutBank::operator==(const QString &name) const
+
+
+bool workoutBank::operator==(const workoutBank &other) const
 {
-   return this->name == name;
+    bool retValue= false;
+    if(this->name == other.name)            //lägga tll om den ska jämföra fler
+        retValue = true;
+
+    return retValue;
+
 }
+
+//bool workoutBank::operator==(const QString &) const
+//{
+//   return this->name == name;
+//}
 
 QString workoutBank::getName() const
 {
@@ -52,68 +61,83 @@ QString workoutBank::toString() const
 
     return retString;
 
+//    std::stringstream ss;
+//        ss << getNameDate() + "\n";
+//        ss << toStringSpecific() + "\n";
+
+        return retString;
+
 }
 
 
 //workoutWeight
-QString workoutWeight::toStringSpecific() const
-{
-    QString retString;
-    retString += "Weight: " + QString::number(weight) + "\n";
-    retString += "Reps: " + QString::number(reps) + "\n";
+//QString workoutWeight::toStringSpecific() const
+//{
+//    QString retString;
+//    retString += "Weight: " + QString::number(weight) + "\n";
+//    retString += "Reps: " + QString::number(reps) + "\n";
 
-    return retString;
+//    return retString;
 
-}
+//}
 
-workoutWeight::workoutWeight(const QString &name, const QString &date, int weight, int reps)
-    : workoutBank(name, date)
-{
-    this->weight = weight;
-    this->reps = reps;
+//workoutWeight::workoutWeight(const QString &name, const QString &date, int weight, int reps)
+//    : workoutBank(name, date)
+//{
+//    this->weight = weight;
+//    this->reps = reps;
 
-}
+//}
 
-workoutWeight::workoutWeight()
-{
+//workoutWeight::workoutWeight()
+//{
 
-}
+//}
 
-workoutWeight::~workoutWeight()
-{
+//workoutWeight::~workoutWeight()
+//{
 
-}
+//}
 
-void workoutWeight::setWeight(int weight)
-{
+//void workoutWeight::setWeight(int weight)
+//{
 
-}
+//}
 
-void workoutWeight::setreps(int reps)
-{
+//void workoutWeight::setreps(int reps)
+//{
 
-}
+//}
 
-int workoutWeight::getWeight() const
-{
+//int workoutWeight::getWeight() const
+//{
 
-}
+//}
 
-int workoutWeight::getReps() const
-{
+//int workoutWeight::getReps() const
+//{
 
-}
+//}
 
-bool workoutWeight::operator==(int weight) const
-{
+//bool workoutWeight::operator==(int weight) const
+//{
 
-}
+//}
 
 
 //workoutRunning
-workoutRunning::workoutRunning(const QString &name, const QString &date, int distance, int time)
-    : workoutBank(name, date)
-{
-    this->distance = distance;
-    this->time = time;
-}
+//QString workoutRunning::toStringSpecific() const
+//{
+//    QString retString;
+//    retString += "Distance: " + QString::number(distance) + "\n";
+//    retString += "Time: " + QString::number(time) + "\n";
+
+//    return retString;
+//}
+
+//workoutRunning::workoutRunning(const QString &name, const QString &date, int distance, int time)
+//    : workoutBank(name, date)
+//{
+//    this->distance = distance;
+//    this->time = time;
+//}

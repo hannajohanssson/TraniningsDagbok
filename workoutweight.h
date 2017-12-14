@@ -23,7 +23,7 @@ public:
     int getReps() const;
 
     //jämföra vikter
-    bool operator==(int weight) const;
+    //bool operator==(int weight) const;
 
     //bool addWorkoutWeight(int weight, int reps);
  };

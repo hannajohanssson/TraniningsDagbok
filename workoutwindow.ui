@@ -173,8 +173,8 @@
   <widget class="QPushButton" name="pushButton_goBack">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>400</y>
+     <x>30</x>
+     <y>190</y>
      <width>75</width>
      <height>23</height>
     </rect>

@@ -1,6 +1,7 @@
 #ifndef WORKOUTRUNNING_H
 #define WORKOUTRUNNING_H
 
+#include "workoutbank.h"
 
 class workoutRunning: public workoutBank
 {
@@ -15,8 +16,8 @@ public:
     workoutRunning();
     ~workoutRunning();
 
-    void setDistance(int distance) const;
-    void setTime(int time) const;
+    void setDistance(int distance);
+    void setTime(int time);
 
     int getDistance() const;
     int getTime() const;

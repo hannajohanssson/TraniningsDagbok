@@ -62,3 +62,9 @@ void workoutWindow::on_pushButton_save_clicked()
     workouts->addWorkout(date.toInt(), workoutText);
 
 }
+
+void workoutWindow::on_pushButton_goBack_clicked()
+{
+    this->close();
+    parentWidget()->show();
+}

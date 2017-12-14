@@ -3,6 +3,8 @@
 #include "workouts.h"
 #include "workoutwindow.h"
 #include "workoutregister.h"
+#include "workoutbankregister.h"
+#include "prwindow.h"
 #include <QApplication>
 #include <Qlabel>
 #include <QCoreApplication>
@@ -21,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     ui->setupUi(this);
+
+    //läsa från fil
 
     //hämtat från minimal
 //    QWidget *window = new QWidget;              //skapar en widget
@@ -66,6 +70,12 @@ MainWindow::MainWindow(QWidget *parent) :
         w1.saveToFile(mFilename);
         w1.readFromFile(mFilename);
 
+        workoutBankRegister wb1;
+        workoutBankRegister wb2;
+        wb1.addWorkoutWeight("Deadlift", "20171214", 130, 1);
+        wb2.addWorkoutRunning("Running", "20171205", 10, 50);
+
+
 
 
 
@@ -84,22 +94,14 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+    //läsa till fil
 }
 
 ////workouts
 void MainWindow::on_pushButton_clicked()
 {
-    //från ppnt
-//    workoutWindow *form2 = new workoutWindow;
-//    form2->exec();
-
-
-    //från test
     mWorkoutWindow = new workoutWindow(&workouts, this);
     mWorkoutWindow -> show();
-
-
-
 
 
 //    //add workouts
@@ -130,3 +132,9 @@ void MainWindow::on_pushButton_clicked()
 
 //}
 
+
+void MainWindow::on_pushButtonPR_clicked()
+{
+    mPRwindow = new PRwindow(&workoutbanks, this);
+    mPRwindow -> show();
+}

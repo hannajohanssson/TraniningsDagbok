@@ -34,7 +34,8 @@ SOURCES += \
     workoutbank.cpp \
     workoutbankregister.cpp \
     workoutweight.cpp \
-    workoutrunning.cpp
+    workoutrunning.cpp \
+    prwindow.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,8 +47,10 @@ HEADERS += \
     workoutbank.h \
     workoutbankregister.h \
     workoutweight.h \
-    workoutrunning.h
+    workoutrunning.h \
+    prwindow.h
 
 FORMS += \
         mainwindow.ui \
-    workoutwindow.ui
+    workoutwindow.ui \
+    prwindow.ui

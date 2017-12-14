@@ -26,22 +26,22 @@ workoutRunning::~workoutRunning()
 
 }
 
-void workoutRunning::setDistance(int distance) const
+void workoutRunning::setDistance(int distance)
 {
-
+    this->distance = distance;
 }
 
-void workoutRunning::setTime(int time) const
+void workoutRunning::setTime(int time)
 {
-
+    this->time = time;
 }
 
 int workoutRunning::getDistance() const
 {
-
+    return distance;
 }
 
 int workoutRunning::getTime() const
 {
-
+    return time;
 }
