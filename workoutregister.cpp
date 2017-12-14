@@ -82,3 +82,9 @@ void WorkoutRegister::readFromFile(QString fileName)
     mFile.close();
 
 }
+
+int WorkoutRegister::getNrOfWorkouts() const
+{
+    return count;
+
+}

@@ -21,6 +21,7 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->lineEdit_date->hide();
     ui->lineEdit_workout->hide();
     ui->pushButton_save->hide();
+    ui->listWidgetShowWorkouts->hide();
 
 }
 
@@ -34,7 +35,14 @@ workoutWindow::~workoutWindow()
 //show workouts
 void workoutWindow::on_pushButton_4_clicked()
 {
-    //läsa från fil
+    ui->listWidgetShowWorkouts->show();
+    ui->listWidgetShowWorkouts->addItem(workouts->toString());
+
+    ui->label_date->hide();
+    ui->label_workout->hide();
+    ui->lineEdit_date->hide();
+    ui->lineEdit_workout->hide();
+    ui->pushButton_save->hide();
 
 
 }
@@ -42,6 +50,7 @@ void workoutWindow::on_pushButton_4_clicked()
 //add workout
 void workoutWindow::on_pushButton_2_clicked()
 {
+    ui->listWidgetShowWorkouts->hide();
     //visa datum mm
     ui->label_date->show();
     ui->label_workout->show();
@@ -54,13 +63,16 @@ void workoutWindow::on_pushButton_2_clicked()
 void workoutWindow::on_pushButton_save_clicked()
 {
 
-    QString date = ui->lineEdit_date->text();       //göra till en int?
+    QString date = ui->lineEdit_date->text();
     QString workoutText = ui->lineEdit_workout->text();
+    ui->lineEdit_date->clear();
+    ui->lineEdit_workout->clear();
 
     QMessageBox::information(this, "Add workout", "The workout has been added.");
-
     workouts->addWorkout(date.toInt(), workoutText);
 
+    //test
+    ui->listWidget->addItem(workouts->toString());
 }
 
 void workoutWindow::on_pushButton_goBack_clicked()

@@ -22,6 +22,8 @@ public:
     int getWeight() const;
     int getReps() const;
 
+
+
     //jämföra vikter
     //bool operator==(int weight) const;
 

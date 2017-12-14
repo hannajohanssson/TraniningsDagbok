@@ -102,6 +102,35 @@ bool workoutBankRegister::addWorkoutRunning(const QString &name, const QString &
     return added;
 }
 
+//QString workoutBankRegister::SortedWeights() const
+//{
+//    QString retString;
+//    int index = -1;
+//    for (int i =0; i<nrOfWorkouts; i++)
+//    {
+//        if(workoutbanks[i]->getName() == "Deadlift")
+//        {
+//            if(index < 1)       //jämföra vikter??
+//                index = 1;
+//        }
+//    }
+
+//}
+
+//QString workoutBankRegister::SortedRunninng() const
+//{
+//    QString retString;
+//    //int index = -1;
+//    for (int i =0; i<nrOfWorkouts; i++)
+//    {
+//        if (workoutRunning.getDistance() == 10)
+//        {
+//            retString += 0;
+//        }
+
+//    }
+
+
 //QString workoutBankRegister::getAllString() const
 //{
 //    QString retString;
@@ -111,16 +140,16 @@ bool workoutBankRegister::addWorkoutRunning(const QString &name, const QString &
 //    if ()
 //}
 
-int workoutBankRegister::FindWorkout(QString& name, QString& date)
-{
-//    int index = -1;
-//    for(int i=0; i<nrOfWorkouts; i++)
-//    {
-//        if(workoutWeight[i].getDate() == date && workoutWeight[i].getName() == name)
-//            index = i;
-//    }
- return 0;
-}
+//int workoutBankRegister::FindWorkout(QString& name, QString& date)
+//{
+////    int index = -1;
+////    for(int i=0; i<nrOfWorkouts; i++)
+////    {
+////        if(workoutWeight[i].getDate() == date && workoutWeight[i].getName() == name)
+////            index = i;
+////    }
+// return 0;
+//}
 
 bool workoutBankRegister::allWorkoutWeightAsString(QString *stringArr, int capacityOfStringArr) const
 {
@@ -132,6 +161,25 @@ bool workoutBankRegister::allWorkoutWeightAsString(QString *stringArr, int capac
         for(int i=0; i<nrOfWorkouts; i++)
         {
             if(typeid(workoutWeight) == typeid(*workoutbanks[i]))        //dynamic_cast<workoutWeight*>(workoutbanks[i] != nullptr)
+            {
+                    stringArr[index++] = workoutbanks[i]->toString();
+            }
+        }
+    }
+    return retValue;
+
+}
+
+bool workoutBankRegister::allWorkoutRunningAsString(QString *stringArr, int capacityOfStringArr) const
+{
+    int index = 0;
+    bool retValue = false;
+    if(capacityOfStringArr >= getNrOfWorkoutsRunning())
+    {
+        retValue = true;
+        for(int i=0; i<nrOfWorkouts; i++)
+        {
+            if(typeid(workoutRunning) == typeid(*workoutbanks[i]))        //dynamic_cast<workoutWeight*>(workoutbanks[i] != nullptr)
             {
                     stringArr[index++] = workoutbanks[i]->toString();
             }

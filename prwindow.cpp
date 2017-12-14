@@ -40,7 +40,6 @@ PRwindow::~PRwindow()
 void PRwindow::on_ButtonAddPR_clicked()
 {
     ui->ButtonAddPRrunning->show();
-
     ui->ButtonAddPRweight->show();
 
 }
@@ -51,12 +50,16 @@ void PRwindow::on_ButtonShowPR_clicked()
     ui->textEdit_BestPR->show();
     ui->textEdit_BestPR_2->show();  //visar alla
 
-
-
     //visa bästa lyftet
 
     //kan sortera här annars i workoutbankregister, göra en sorteringsfunktion
 
+    //sortera vikter
+//    in index = workoutbanks->getNrOfWorkoutsWeight();
+//    for(int i=0; i<index; i++)
+//    {
+//        if()
+//    }
 
 }
 
@@ -169,7 +172,7 @@ void PRwindow::on_pushButton_2_clicked()
     QString* arr = new QString[index];
 
 
-    workoutbanks->allWorkoutWeightAsString(arr, index);
+    workoutbanks->allWorkoutRunningAsString(arr, index);
 
     for(int i=0; i<index; i++)
     {

@@ -29,8 +29,6 @@ SOURCES += \
     workouts.cpp \
     workoutwindow.cpp \
     workoutregister.cpp \
-    pr.cpp \
-    prregister.cpp \
     workoutbank.cpp \
     workoutbankregister.cpp \
     workoutweight.cpp \
@@ -42,8 +40,6 @@ HEADERS += \
     workouts.h \
     workoutwindow.h \
     workoutregister.h \
-    pr.h \
-    prregister.h \
     workoutbank.h \
     workoutbankregister.h \
     workoutweight.h \

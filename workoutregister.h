@@ -32,6 +32,7 @@ public:
     QString toString() const;
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);
+    int getNrOfWorkouts() const;
 
 };
 
