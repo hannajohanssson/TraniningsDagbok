@@ -27,6 +27,10 @@ private slots:
 
     void on_pushButtonPR_clicked();
 
+    void on_pushButtonPR_2_clicked();
+
+    void on_pushButtonCompetition_clicked();
+
 private:
     Ui::MainWindow *ui;
     WorkoutRegister workouts;

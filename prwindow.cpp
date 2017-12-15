@@ -9,6 +9,12 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->setupUi(this);
     this->workoutbanks = workoutbanks;
 
+    //göra en if-sts och inte visa add PR/show PR om "Tävlingar"klickats
+    //if ()
+
+
+
+
     ui->ButtonAddPRrunning->hide();
     ui->ButtonAddPRweight->hide();
     ui->labelNama->hide();

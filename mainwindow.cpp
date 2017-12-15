@@ -138,3 +138,9 @@ void MainWindow::on_pushButtonPR_clicked()
     mPRwindow = new PRwindow(&workoutbanks, this);
     mPRwindow -> show();
 }
+
+//lägga till så nytt fönster öppnas osv...
+void MainWindow::on_pushButtonCompetition_clicked()
+{
+
+}

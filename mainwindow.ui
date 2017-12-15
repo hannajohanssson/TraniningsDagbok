@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
@@ -64,13 +64,26 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
-      <width>75</width>
+      <y>100</y>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>PRs</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCompetition">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Competitions</string>
     </property>
    </widget>
   </widget>
