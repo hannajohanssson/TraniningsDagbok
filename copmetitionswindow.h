@@ -2,6 +2,8 @@
 #define COPMETITIONSWINDOW_H
 
 #include <QDialog>
+#include "competition.h"
+#include "competitionregister.h"
 
 namespace Ui {
 class Copmetitionswindow;
@@ -12,7 +14,7 @@ class Copmetitionswindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit Copmetitionswindow(QWidget *parent = 0);
+    explicit Copmetitionswindow(CompetitionRegister* competitions, QWidget *parent = 0);
     ~Copmetitionswindow();
 
 private slots:
@@ -28,6 +30,9 @@ private slots:
 
 private:
     Ui::Copmetitionswindow *ui;
+    CompetitionRegister* competitions;
+
+
 };
 
 #endif // COPMETITIONSWINDOW_H

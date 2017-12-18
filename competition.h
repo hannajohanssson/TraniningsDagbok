@@ -1,5 +1,8 @@
 #ifndef COMPETITION_H
 #define COMPETITION_H
+#include <QMainWindow>
+#include <QObject>
+#include <QWidget>
 #include <QString>
 #include <QFile>
 #include <QDebug>
@@ -7,6 +10,8 @@
 #include <QCoreApplication>         //behövs??
 #include <QDir>
 #include <QFileInfo>
+
+
 
 
 class Competition

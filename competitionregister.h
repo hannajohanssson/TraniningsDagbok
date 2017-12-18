@@ -1,6 +1,7 @@
 #ifndef COMPETITIONREGISTER_H
 #define COMPETITIONREGISTER_H
 #include "competition.h"
+#include <QMainWindow>
 #include <QString>
 #include <QFile>
 #include <QDebug>
@@ -12,6 +13,8 @@
 #include <QObject>
 #include <QWidget>
 
+
+
 class CompetitionRegister
 {
 private:
@@ -20,6 +23,9 @@ private:
     int nrOfCompetitions;
 
     void Expand();
+
+
+
 public:
     CompetitionRegister();
     ~CompetitionRegister();

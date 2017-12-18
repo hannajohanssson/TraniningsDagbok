@@ -9,11 +9,6 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->setupUi(this);
     this->workoutbanks = workoutbanks;
 
-    //göra en if-sts och inte visa add PR/show PR om "Tävlingar"klickats
-    //if ()
-
-
-
 
     ui->ButtonAddPRrunning->hide();
     ui->ButtonAddPRweight->hide();
@@ -35,6 +30,7 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->listWidget->hide();
     ui->textEdit_BestPR->hide();
     ui->textEdit_BestPR_2->hide();
+
 
 }
 
@@ -105,6 +101,8 @@ void PRwindow::on_ButtonAddPRrunning_clicked()
 //save workout weight
 void PRwindow::on_pushButton_clicked()
 {
+
+
     ui->listWidget->show();
     QString name = ui->lineEdit_6Name->text();
     ui->lineEdit_6Name->clear();
@@ -118,8 +116,6 @@ void PRwindow::on_pushButton_clicked()
     QString reps = ui->lineEdit_2Reps->text();
     ui->lineEdit_2Reps->clear();
 
-
-
     workoutbanks->addWorkoutWeight(name, date, weight.toInt(), reps.toInt());
 
     int index = workoutbanks->getNrOfWorkoutsWeight();
@@ -132,9 +128,12 @@ void PRwindow::on_pushButton_clicked()
     for(int i=0; i<index; i++)
     {
         ui->listWidget->addItem(arr[i]);
+
     }
 
+
     delete[] arr;
+
 
 
 

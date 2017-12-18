@@ -1,11 +1,15 @@
 #include "copmetitionswindow.h"
 #include "ui_copmetitionswindow.h"
+#include "competition.h"
+#include "competitionregister.h"
+#include <QMessageBox>
 
-Copmetitionswindow::Copmetitionswindow(QWidget *parent) :
+Copmetitionswindow::Copmetitionswindow(CompetitionRegister* competitions, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Copmetitionswindow)
 {
     ui->setupUi(this);
+    this-> competitions = competitions;
 
     ui->pushButtonAddCompetitions->hide();
     ui->pushButtonShowCompetitions->hide();

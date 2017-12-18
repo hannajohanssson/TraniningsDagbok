@@ -5,6 +5,7 @@
 #include "workoutregister.h"
 #include "workoutbankregister.h"
 #include "prwindow.h"
+#include "copmetitionswindow.h"
 #include <QApplication>
 #include <Qlabel>
 #include <QCoreApplication>
@@ -137,10 +138,20 @@ void MainWindow::on_pushButtonPR_clicked()
 {
     mPRwindow = new PRwindow(&workoutbanks, this);
     mPRwindow -> show();
+
+
 }
 
 //lägga till så nytt fönster öppnas osv...
-void MainWindow::on_pushButtonCompetition_clicked()
-{
 
+void MainWindow::on_pushButton_2_clicked()
+{
+    mCompetitionWindow = new Copmetitionswindow(&competitions, this);
+    mCompetitionWindow -> show();
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    this->close();
 }
