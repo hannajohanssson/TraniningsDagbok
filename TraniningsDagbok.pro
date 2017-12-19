@@ -36,7 +36,7 @@ SOURCES += \
     prwindow.cpp \
     competition.cpp \
     competitionregister.cpp \
-    copmetitionswindow.cpp
+    competitionwindow.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -50,10 +50,10 @@ HEADERS += \
     prwindow.h \
     competition.h \
     competitionregister.h \
-    copmetitionswindow.h
+    competitionwindow.h
 
 FORMS += \
         mainwindow.ui \
     workoutwindow.ui \
     prwindow.ui \
-    copmetitionswindow.ui
+    competitionwindow.ui

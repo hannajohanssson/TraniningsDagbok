@@ -5,7 +5,9 @@
 #include "workoutregister.h"
 #include "workoutbankregister.h"
 #include "prwindow.h"
-#include "copmetitionswindow.h"
+//#include "competition.h"
+//#include "competitionregister.h"
+//#include "competitionwindow.h"
 #include <QApplication>
 #include <Qlabel>
 #include <QCoreApplication>
@@ -26,40 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     //läsa från fil
-
-    //hämtat från minimal
-//    QWidget *window = new QWidget;              //skapar en widget
-//    window->setWindowTitle("Träningsdagbok");           //skapar titeln
-//    window->show();
-
-//    parent->setWindowTitle("Workout Diary");
-//    parent->show();
-
-//    QLabel *label1 = new QLabel("Hanna Johansson\n940214\nCrossfit Athlete since: 2015\n");
-//    label1->show();
-
-
-//    ui->pushButton_2->hide();
-//    ui->textEdit->hide();
-//    ui->pushButton_3->hide();
-//    ui->textEdit_2->hide();
-//    ui->label_4->hide();
-//    ui->label_5->hide();
-//    ui->pushButton_4->hide();
-
-    //från test
-    // setCentralWidget((ui->plainTextEdit));      //lägga in fritext - spara träningspass?
-
-//    Workouts w1;
-//    w1.setDate(171130);
-//    w1.setWorkout("Running 10km");
-
-//        QString mFilename = "C:/Qt/Projektet/TraniningsDagbok/myfile.txt";
-
-
-//        w1.saveToFile(mFilename);
-//        w1.readFromFile(mFilename);
-
+    //workouts.readFromFile("filnamnet");
 
 
         WorkoutRegister w1;
@@ -103,55 +72,17 @@ void MainWindow::on_pushButton_clicked()
 {
     mWorkoutWindow = new workoutWindow(&workouts, this);
     mWorkoutWindow -> show();
-
-
-//    //add workouts
-//    ui -> pushButton_2->show();
-//    //show workouts
-//    ui->pushButton_4->show();
-    //När workout-knappen trycks -> öppnas nytt fönster (workoutwindow)
 }
-
-
-//void MainWindow::on_pushButton_2_clicked()
-//{
-//    //datum och ruta
-//    ui->label_4->show();
-//    ui->textEdit_2->show();
-//    ui->label_5->show();
-//    ui->textEdit->show();
-//}
-
-//void MainWindow::on_pushButton_3_clicked()
-//{
-//    //spara från text 1 ->  klassen, setDate
-//   // ui ->textEdit -> get-funktion för o hämta text (två st)
-//}
-
-//void MainWindow::on_pushButton_4_clicked()
-//{
-
-//}
-
 
 void MainWindow::on_pushButtonPR_clicked()
 {
     mPRwindow = new PRwindow(&workoutbanks, this);
     mPRwindow -> show();
-
-
-}
-
-//lägga till så nytt fönster öppnas osv...
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    mCompetitionWindow = new Copmetitionswindow(&competitions, this);
-    mCompetitionWindow -> show();
 }
 
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_pushButtonCompetitions_clicked()
 {
-    this->close();
+//    mCompetitionWindow = new CompetitionWindow(&competitions, this);
+//    mCompetitionWindow -> show();
 }

@@ -196,8 +196,8 @@
   <widget class="QListWidget" name="listWidgetShowWorkouts">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>270</y>
+     <x>50</x>
+     <y>250</y>
      <width>361</width>
      <height>431</height>
     </rect>

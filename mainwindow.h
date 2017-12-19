@@ -9,7 +9,7 @@
 #include "prwindow.h"
 #include "competition.h"
 #include "competitionregister.h"
-#include "copmetitionswindow.h"
+#include "competitionwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,37 +25,22 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
-
-
     void on_pushButtonPR_clicked();
-
-    //void on_pushButtonPR_2_clicked();
-
-    void on_pushButtonCompetition_clicked();
-
-    //void on_pushButton_2_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_3_clicked();
+    void on_pushButtonCompetitions_clicked();
 
 private:
     Ui::MainWindow *ui;
     WorkoutRegister workouts;
     workoutWindow *mWorkoutWindow;
 
-    workoutBankRegister workoutbanks;
+    workoutBankRegister  workoutbanks;
     PRwindow *mPRwindow;
 
     CompetitionRegister competitions;
-    Copmetitionswindow *mCompetitionWindow;
+    CompetitionWindow *mCompetitionWindow;
 
-
-
-
-
-
+//    CompetitionRegister competitions;
+//    CompetitionWindow *mCompetitionWindow;
 
 };
 
