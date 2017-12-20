@@ -5,9 +5,9 @@
 #include "workoutregister.h"
 #include "workoutbankregister.h"
 #include "prwindow.h"
-//#include "competition.h"
-//#include "competitionregister.h"
-//#include "competitionwindow.h"
+#include "competition.h"
+#include "competitionregister.h"
+#include "competitionwindow.h"
 #include <QApplication>
 #include <Qlabel>
 #include <QCoreApplication>

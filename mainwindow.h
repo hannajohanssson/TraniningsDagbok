@@ -10,6 +10,7 @@
 #include "competition.h"
 #include "competitionregister.h"
 #include "competitionwindow.h"
+#include <QObject>
 
 namespace Ui {
 class MainWindow;

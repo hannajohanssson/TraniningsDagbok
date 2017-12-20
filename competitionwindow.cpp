@@ -8,17 +8,9 @@ CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget 
     QDialog(parent),
     ui(new Ui::CompetitionWindow)
 {
-
-
-//    CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget *parent) :
-//        QDialog(parent),
-//        ui(new Ui::CompetitionWindow)
-
-
-
     ui->setupUi(this);
     this->competitions = competitions;
-    //this-> competitions = competitions;
+
 
     ui->Date->hide();
     ui->Description->hide();

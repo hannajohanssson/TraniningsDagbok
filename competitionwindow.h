@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "competitionregister.h"
+#include "competition.h"
+#include <QObject>
 
 
 namespace Ui {
@@ -14,10 +16,8 @@ class CompetitionWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit CompetitionWindow(QWidget *parent = 0);
+    explicit CompetitionWindow(CompetitionRegister* competitions, QWidget *parent = 0);
     ~CompetitionWindow();
-
-//explicit CompetitionWindow(CompetitionRegister* competitions, QWidget *parent = 0);
 
 private slots:
     void on_pushButtonAddCompetition_clicked();
@@ -30,7 +30,7 @@ private slots:
 
 private:
     Ui::CompetitionWindow *ui;
-    //CompetitionRegister* competitions;
+    CompetitionRegister* competitions;
 
 
 };

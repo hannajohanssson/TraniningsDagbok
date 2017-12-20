@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "workouts.h"
 #include "workoutregister.h"
+#include <QObject>
 
 namespace Ui {
 class workoutWindow;

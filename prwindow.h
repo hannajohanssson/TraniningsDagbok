@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "workoutbankregister.h"
+#include <QObject>
 
 namespace Ui {
 class PRwindow;
