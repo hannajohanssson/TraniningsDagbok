@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+
 #include "workouts.h"  //behövs det?
 #include "workoutwindow.h"
 #include "workoutregister.h"
@@ -10,6 +10,9 @@
 #include "competition.h"
 #include "competitionregister.h"
 #include "competitionwindow.h"
+
+#include <QMainWindow>
+
 #include <QObject>
 
 namespace Ui {

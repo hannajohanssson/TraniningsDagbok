@@ -3,6 +3,10 @@
 #include "competition.h"
 #include "competitionregister.h"
 #include <QMessageBox>
+#include <QDialog>
+#include <QObject>
+
+
 
 CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget *parent) :
     QDialog(parent),
@@ -25,6 +29,7 @@ CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget 
     ui->textEditDescription->hide();
     ui->pushButtonSave->hide();
     ui->listWidgetTest->hide();
+    ui->listWidgetShowCompetitions->hide();
 }
 
 CompetitionWindow::~CompetitionWindow()
@@ -48,11 +53,30 @@ void CompetitionWindow::on_pushButtonAddCompetition_clicked()
     ui->pushButtonSave->show();
     ui->listWidgetTest->show();
 
+
+
 }
 
 void CompetitionWindow::on_pushButtonShow_clicked()
 {
 
+    ui->listWidgetShowCompetitions->show();
+    ui->listWidgetShowCompetitions->addItem(competitions->toString());
+
+
+    ui->Date->hide();
+    ui->Description->hide();
+    ui->FinalPlace->hide();
+    ui->Name->hide();
+    ui->NrOfEvents->hide();
+    ui->lineEditDate->hide();
+    ui->lineEditName->hide();
+    ui->lineEditNrOfEvents->hide();
+    ui->lineEditNrOfEvents->hide();
+    ui->lineEditPlace->hide();
+    ui->textEditDescription->hide();
+    ui->pushButtonSave->hide();
+    ui->listWidgetTest->hide();
 }
 
 void CompetitionWindow::on_pushButtonSave_clicked()

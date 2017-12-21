@@ -21,6 +21,7 @@ private:
     int count;
 
     void Expand();
+    //int Find(const Workouts& workout) const;
 
 public:
     WorkoutRegister();

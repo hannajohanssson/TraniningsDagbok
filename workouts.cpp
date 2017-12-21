@@ -1,10 +1,10 @@
 #include "workouts.h"
-//#include <QFile>
-//#include <QDebug>
-//#include <QTextStream>
-//#include <QCoreApplication>         //behövs??
-//#include <QDir>
-//#include <QFileInfo>
+#include <QFile>
+#include <QDebug>
+#include <QTextStream>
+#include <QCoreApplication>         //behövs??
+#include <QDir>
+#include <QFileInfo>
 
 
 

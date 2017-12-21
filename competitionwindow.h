@@ -1,10 +1,9 @@
 #ifndef COMPETITIONWINDOW_H
 #define COMPETITIONWINDOW_H
 
-#include <QDialog>
+
 #include "competitionregister.h"
-#include "competition.h"
-#include <QObject>
+#include <QDialog>
 
 
 namespace Ui {

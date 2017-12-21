@@ -8,6 +8,7 @@
 #include "competition.h"
 #include "competitionregister.h"
 #include "competitionwindow.h"
+#include <QObject>
 #include <QApplication>
 #include <Qlabel>
 #include <QCoreApplication>
@@ -83,6 +84,6 @@ void MainWindow::on_pushButtonPR_clicked()
 
 void MainWindow::on_pushButtonCompetitions_clicked()
 {
-//    mCompetitionWindow = new CompetitionWindow(&competitions, this);
-//    mCompetitionWindow -> show();
+    mCompetitionWindow = new CompetitionWindow(&competitions, this);
+    mCompetitionWindow -> show();
 }
