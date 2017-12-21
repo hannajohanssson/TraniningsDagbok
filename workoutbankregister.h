@@ -23,12 +23,12 @@ public:
 
     bool addWorkoutWeight(const QString& name, const QString& date, int weight, int reps);
     bool addWorkoutRunning(const QString& name, const QString& date, int distance, int time);
-    //QString getAllString() const;
+    QString getAllString() const;
 
     //int FindWorkout(QString& name, QString& date);
 
     //lägga till funktioner här som sorterar efter namn och vikt tex
-    //QString SortedWeights() const;
+   //QString SortedWeights() const; //skicka in vad?
 //    QString SortedRunninng() const;
 
 

@@ -1,31 +1,6 @@
 #include "workoutbankregister.h"
 #include <typeinfo>
 
-
-//workoutBankRegister::workoutBankRegister()
-//{
-//    nrOfWorkouts = 0;
-//    capacity = 10;
-//    workoutbanks = new workoutBank*[capacity];
-//    //från workoutregister.h
-//    // Workouts** workouts; //dubbelpekare??
-
-//    //workoutRegister
-////    count = 0;
-////    capacity = 20;
-////    workouts = new Workouts*[capacity];       //pekare om dubbelpekare
-
-
-//    //workouts
-////    this->date=date;
-////    this->workout=workout;
-////    count =0;
-////    capacity = 20;
-////    workoutsAll= new Workouts[capacity];
-//    //readFromFile();
-
-//}
-
 int workoutBankRegister::Find(const workoutBank &workout) const
 {
     int index=-1;
@@ -102,6 +77,60 @@ bool workoutBankRegister::addWorkoutRunning(const QString &name, const QString &
     return added;
 }
 
+QString workoutBankRegister::getAllString() const
+{
+    QString retString;
+    for (int i=0; i<nrOfWorkouts; i++)
+    {
+        retString += workoutbanks[i]->toString() + "\n";
+    }
+    return retString;
+}
+
+//QString workoutBankRegister::SortedWeights() const
+//{
+    //Dynamic_cast... Behövs för att komma åt subklassernas _egna_ medlemsfunktioner.
+//        for (int i = 0; i < 5; i++)
+//        {
+//            //Type inference, nytt i C++11, (eller var det C++14?)
+//            //auto trianglePtr = dynamic_cast<Triangle*>(baseArray[i]);
+//            Triangle* trianglePtr = dynamic_cast<Triangle*>(baseArray[i]);
+//            if (trianglePtr != nullptr)
+
+
+//    for (int i = 0; i < 5; i++)
+//        {
+//            std::cout << "At index " << i << " we have a " << typeid(*baseArray[i]).name() << "\n";
+//        }
+//        std::cin.get();
+//        //Typeid...
+//        if (typeid(*baseArray[0]) == typeid(Square))
+
+
+
+//        QString retString;
+//        int index = -1;
+
+
+//        for (int i =0; i<nrOfWorkouts; i++)
+//        {
+//            workoutBank* workoutPtr = dynamic_cast<workoutBank*>(workoutbanks[i]);
+//            if(workoutPtr != nullptr)
+//            {
+//                if(workoutbanks[i]->getName() == "Deadlift")
+//                {
+//                    if(typeid(*workoutbanks[i]).weight()  )
+
+//                    if(index < 1)       //jämföra vikter??
+//                        index = i;
+//                }
+//            }
+//            retString += workoutbanks[]
+//         }
+
+
+//}
+
 //QString workoutBankRegister::SortedWeights() const
 //{
 //    QString retString;
@@ -110,10 +139,13 @@ bool workoutBankRegister::addWorkoutRunning(const QString &name, const QString &
 //    {
 //        if(workoutbanks[i]->getName() == "Deadlift")
 //        {
+
+
 //            if(index < 1)       //jämföra vikter??
-//                index = 1;
+//                index = i;
 //        }
 //    }
+//    retString += workoutbanks[]
 
 //}
 

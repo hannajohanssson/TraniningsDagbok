@@ -52,15 +52,29 @@ void PRwindow::on_ButtonShowPR_clicked()
     ui->textEdit_BestPR->show();
     ui->textEdit_BestPR_2->show();  //visar alla
 
+
+    workoutBankRegister wb1;
+    workoutBankRegister wb2;
+    wb1.addWorkoutWeight("Deadlift", "20171214", 130, 1);
+    wb2.addWorkoutRunning("Running", "20171205", 10, 50);
+
+
+
+    ui->listWidget->show();
+    ui->listWidget->addItem(wb1.getAllString());
+    ui->listWidget->addItem(wb2.getAllString());
+    ui->listWidget->addItem(workoutbanks->getAllString());
+
+
     //visa bästa lyftet
 
     //kan sortera här annars i workoutbankregister, göra en sorteringsfunktion
 
     //sortera vikter
-//    in index = workoutbanks->getNrOfWorkoutsWeight();
+//    int index = workoutbanks->getNrOfWorkoutsWeight();
 //    for(int i=0; i<index; i++)
 //    {
-//        if()
+//        if(workoutbanks[i].)
 //    }
 
 }
@@ -101,8 +115,6 @@ void PRwindow::on_ButtonAddPRrunning_clicked()
 //save workout weight
 void PRwindow::on_pushButton_clicked()
 {
-
-
     ui->listWidget->show();
     QString name = ui->lineEdit_6Name->text();
     ui->lineEdit_6Name->clear();
@@ -134,8 +146,8 @@ void PRwindow::on_pushButton_clicked()
 
     delete[] arr;
 
-
-
+//    //test
+//    ui->listWidget->addItem(workoutbanks->toString());
 
 
 

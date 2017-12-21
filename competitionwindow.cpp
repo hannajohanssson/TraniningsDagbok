@@ -39,6 +39,7 @@ CompetitionWindow::~CompetitionWindow()
 
 void CompetitionWindow::on_pushButtonAddCompetition_clicked()
 {
+    ui->listWidgetShowCompetitions->hide();
     ui->Date->show();
     ui->Description->show();
     ui->FinalPlace->show();
@@ -59,6 +60,17 @@ void CompetitionWindow::on_pushButtonAddCompetition_clicked()
 
 void CompetitionWindow::on_pushButtonShow_clicked()
 {
+    QString description1 = "1: 60 cal AB, 50 synced wallbaalls, 40 dumbell snatches, 30 goblet suats."
+                           "\n2:5 Deadlifts 115kg, 5 pullups, 5 T2B, 1 ropeclimb. Adding 5 each round."
+                           "\n3:A/ 1RM powerclean + 3front squats"
+                           "\n  B/ 4 rounds: 20 cal row, 20 burpee boxjump over, 5 high snatch, 3 OHS.\n";
+    QString name1 = "Juleböj";
+    CompetitionRegister c1;
+    c1.addCompetition(171210, name1, 3, description1, 8);
+    ui->listWidgetShowCompetitions->addItem(c1.toString());
+
+
+
 
     ui->listWidgetShowCompetitions->show();
     ui->listWidgetShowCompetitions->addItem(competitions->toString());
@@ -97,17 +109,20 @@ void CompetitionWindow::on_pushButtonSave_clicked()
 //    QString description = ui->textEditDescription->text();
 //    ui->textEditDescription->clear();
 
-    QString description = ui->lineEditTestDescription->text();
-    ui->lineEditTestDescription->clear();
+//    QString description = ui->lineEditTestDescription->text();
+//    ui->lineEditTestDescription->clear();
+
+    QString description = ui->textEditDescription->toPlainText();
+    ui->textEditDescription->clear();
 
     QString place = ui->lineEditPlace->text();
     ui->lineEditPlace->clear();
 
 
 
-//    competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), description, place.toInt());
+    competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), description, place.toInt());
 
-//    ui->listWidgetTest->addItem(competitions->toString());
+    ui->listWidgetTest->addItem(competitions->toString());
 
 
 

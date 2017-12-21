@@ -13,6 +13,10 @@
 #include <QObject>
 #include <QWidget>
 
+//#include <QtAlgorithms>
+//#include <algorithm>		//istället för att själv skriva swap-funktionen
+
+
 
 
 class CompetitionRegister
@@ -37,6 +41,13 @@ public:
     int getNrOfWorkouts();
 
     //sortera tävlingar efter finalplace - ha i competitionregister
+    //QString sortedByPlace() const;
+
+    template <typename T>
+    int partition(T* competitions,int start,int end);
+    template <typename T>
+    void quicksort(T* competitions, int start, int end);
+
 };
 
 #endif // COMPETITIONREGISTER_H
