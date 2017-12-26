@@ -43,6 +43,7 @@ public:
 
 
 
+
     //sortera tävlingar efter finalplace - ha i competitionregister
     //QString sortedByPlace() const;
 

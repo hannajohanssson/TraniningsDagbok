@@ -15,6 +15,8 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     this-> workouts = workouts;
 
     //skriva ut antal workoouts hittills, .getNrOfWorkouts()
+    QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
+    ui->labelNrOfWorkouts->setText(nrOfWorkouts);
 
     ui->label_date->hide();
     ui->label_workout->hide();
@@ -38,6 +40,7 @@ workoutWindow::~workoutWindow()
 //show workouts
 void workoutWindow::on_pushButton_4_clicked()
 {
+    ui->labelNrOfWorkouts->hide();
     ui->labelShowAllWorkouts->clear();
     WorkoutRegister w1;
     w1.addWorkout(171205, "Running 10km");
@@ -65,6 +68,9 @@ void workoutWindow::on_pushButton_4_clicked()
 //add workout
 void workoutWindow::on_pushButton_2_clicked()
 {
+    ui->labelNrOfWorkouts->show();
+    QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
+    ui->labelNrOfWorkouts->setText(nrOfWorkouts);
     ui->pushButtonRemoveSave->hide();
     ui->labelRemove->hide();
     ui->lineEditRemove->hide();
@@ -92,6 +98,9 @@ void workoutWindow::on_pushButton_save_clicked()
 
     QMessageBox::information(this, "Add workout", "The workout has been added.");
     workouts->addWorkout(date.toInt(), workoutText);
+
+    QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
+    ui->labelNrOfWorkouts->setText(nrOfWorkouts);
 }
 
 void workoutWindow::on_pushButton_goBack_clicked()

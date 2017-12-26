@@ -28,8 +28,8 @@ CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget 
     ui->lineEditPlace->hide();
     ui->textEditDescription->hide();
     ui->pushButtonSave->hide();
-    ui->listWidgetTest->hide();
     ui->listWidgetShowCompetitions->hide();
+
 }
 
 CompetitionWindow::~CompetitionWindow()
@@ -52,7 +52,6 @@ void CompetitionWindow::on_pushButtonAddCompetition_clicked()
     ui->lineEditPlace->show();
     ui->textEditDescription->show();
     ui->pushButtonSave->show();
-    ui->listWidgetTest->show();
 
 
 
@@ -60,6 +59,7 @@ void CompetitionWindow::on_pushButtonAddCompetition_clicked()
 
 void CompetitionWindow::on_pushButtonShow_clicked()
 {
+    ui->listWidgetShowCompetitions->clear();
     QString description1 = "1: 60 cal AB, 50 synced wallbaalls, 40 dumbell snatches, 30 goblet suats."
                            "\n2:5 Deadlifts 115kg, 5 pullups, 5 T2B, 1 ropeclimb. Adding 5 each round."
                            "\n3:A/ 1RM powerclean + 3front squats"
@@ -68,9 +68,6 @@ void CompetitionWindow::on_pushButtonShow_clicked()
     CompetitionRegister c1;
     c1.addCompetition(171210, name1, 3, description1, 8);
     ui->listWidgetShowCompetitions->addItem(c1.toString());
-
-
-
 
     ui->listWidgetShowCompetitions->show();
     ui->listWidgetShowCompetitions->addItem(competitions->toString());
@@ -88,13 +85,15 @@ void CompetitionWindow::on_pushButtonShow_clicked()
     ui->lineEditPlace->hide();
     ui->textEditDescription->hide();
     ui->pushButtonSave->hide();
-    ui->listWidgetTest->hide();
+
+
+
 }
 
 void CompetitionWindow::on_pushButtonSave_clicked()
 {
 
-    ui->listWidgetTest->show();
+
     QString date = ui->lineEditDate->text();
     ui->lineEditDate->clear();
 
@@ -122,7 +121,9 @@ void CompetitionWindow::on_pushButtonSave_clicked()
 
     competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), description, place.toInt());
 
-    ui->listWidgetTest->addItem(competitions->toString());
+    //ui->listWidgetTest->addItem(competitions->toString());
+
+
 
 
 
@@ -133,4 +134,12 @@ void CompetitionWindow::on_pushButtonGoBack_clicked()
 {
     this->close();
     parentWidget()->show();
+}
+
+void CompetitionWindow::on_RemoveComp_clicked()
+{
+    competitions->removeLatest();
+    ui->listWidgetShowCompetitions->hide();
+    QMessageBox::information(this, "Remove latest competition", "The latest competition has been removed.");
+
 }

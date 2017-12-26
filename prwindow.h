@@ -34,6 +34,8 @@ private slots:
 
     void on_dateEdit_userDateChanged(const QDate &date);
 
+    void on_RemovePR_clicked();
+
 private:
     Ui::PRwindow *ui;
     workoutBankRegister* workoutbanks;

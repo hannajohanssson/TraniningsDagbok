@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>509</height>
+    <width>623</width>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -120,7 +120,7 @@
      <x>190</x>
      <y>60</y>
      <width>411</width>
-     <height>431</height>
+     <height>401</height>
     </rect>
    </property>
   </widget>
@@ -211,6 +211,19 @@
      <width>411</width>
      <height>301</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelNrOfWorkouts">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

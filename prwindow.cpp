@@ -29,7 +29,7 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->pushButton_2->hide();
     ui->listWidget->hide();
     ui->textEdit_BestPR->hide();
-    ui->textEdit_BestPR_2->hide();
+
 
 
 }
@@ -50,7 +50,7 @@ void PRwindow::on_ButtonShowPR_clicked()
 {
     ui->label_5BesPR->show();
     ui->textEdit_BestPR->show();
-    ui->textEdit_BestPR_2->show();  //visar alla
+
 
 
     workoutBankRegister wb1;
@@ -229,3 +229,8 @@ void PRwindow::on_pushButton_3_clicked()
 
 
 
+
+void PRwindow::on_RemovePR_clicked()
+{
+
+}

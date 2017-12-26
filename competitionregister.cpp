@@ -40,7 +40,7 @@ QString CompetitionRegister::toString() const
     QString retString = "";
     for(int i=0; i<nrOfCompetitions; i++)
     {
-        retString = competitions[i]->toString();
+        retString += competitions[i]->toString();
     }
     return retString;
 
@@ -90,8 +90,9 @@ int CompetitionRegister::getNrOfWorkouts()
 
 int CompetitionRegister::removeLatest()
 {
-    delete competitions[nrOfCompetitions];
-    return nrOfCompetitions --;
+    delete competitions[nrOfCompetitions-1];
+    nrOfCompetitions--;
+    return nrOfCompetitions;
 }
 
 

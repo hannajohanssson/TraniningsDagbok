@@ -54,8 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
         CompetitionRegister c1;
         c1.addCompetition(171210, name1, 3, description1, 8);
 
-        QString nrOfWorkouts = "Amount of workouts this far: " + workouts.getNrOfWorkouts();
-        ui->lineEditTest->setText(nrOfWorkouts);
+
 
 
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>302</width>
+    <width>338</width>
     <height>239</height>
    </rect>
   </property>
@@ -84,19 +84,6 @@
     </property>
     <property name="text">
      <string>Competitions</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditTest">
-    <property name="geometry">
-     <rect>
-      <x>172</x>
-      <y>10</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="clearButtonEnabled">
-     <bool>false</bool>
     </property>
    </widget>
   </widget>
