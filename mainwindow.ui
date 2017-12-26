@@ -86,6 +86,19 @@
      <string>Competitions</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEditTest">
+    <property name="geometry">
+     <rect>
+      <x>172</x>
+      <y>10</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

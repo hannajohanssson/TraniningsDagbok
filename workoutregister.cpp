@@ -30,7 +30,7 @@ void WorkoutRegister::Expand()
 int WorkoutRegister::Find(const Workouts &date) const
 {
     int index = -1;
-    for(int i =0; i<count; i--)
+    for(int i =0; i<count; i++)
     {
         if (date == *workouts[i])
         {

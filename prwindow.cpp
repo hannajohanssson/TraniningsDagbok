@@ -175,6 +175,10 @@ void PRwindow::on_pushButton_2_clicked()
     QString date = ui->lineEdit_5Date->text();
     ui->lineEdit_5Date->clear();
 
+    //QString date = ui->dateEditAddDate->saveGeometry();
+
+   // QString date = ui->dateEditAddDate->date();
+
     QString distance = ui->lineEdit_7Distance->text();
     ui->lineEdit_7Distance->clear();
 
@@ -222,3 +226,6 @@ void PRwindow::on_pushButton_3_clicked()
     this->close();
     parentWidget()->show();
 }
+
+
+

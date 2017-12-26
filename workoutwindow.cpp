@@ -26,6 +26,7 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->labelRemove->hide();
     ui->lineEditRemove->hide();
     ui->pushButtonRemoveSave->hide();
+    ui->listWidgetRemoveShow->hide();
 
 
 }
@@ -48,6 +49,7 @@ void workoutWindow::on_pushButton_4_clicked()
     ui->listWidgetShowWorkouts->addItem(workouts->toString());
 
 
+    ui->listWidgetRemoveShow->hide();
     ui->pushButtonRemoveSave->hide();
     ui->labelRemove->hide();
     ui->lineEditRemove->hide();
@@ -74,6 +76,7 @@ void workoutWindow::on_pushButton_2_clicked()
     ui->textEdit_WorkoutDescription->show();
     ui->pushButton_save->show();
     ui->labelShowAllWorkouts->hide();
+    ui->listWidgetRemoveShow->hide();
 
 }
 
@@ -89,9 +92,6 @@ void workoutWindow::on_pushButton_save_clicked()
 
     QMessageBox::information(this, "Add workout", "The workout has been added.");
     workouts->addWorkout(date.toInt(), workoutText);
-
-    //test
-    ui->listWidget->addItem(workouts->toString());
 }
 
 void workoutWindow::on_pushButton_goBack_clicked()
@@ -111,6 +111,8 @@ void workoutWindow::on_pushButtonRemove_clicked()
     ui->textEdit_WorkoutDescription->hide();
     ui->pushButton_save->hide();
     ui->listWidgetShowWorkouts->hide();
+    ui->listWidgetRemoveShow->show();
+    ui->listWidgetRemoveShow->addItem(workouts->toString());
 
 
 
@@ -121,5 +123,11 @@ void workoutWindow::on_pushButtonRemoveSave_clicked()
     QString date = ui->lineEditRemove->text();
     ui->lineEditRemove->clear();
 
+    QMessageBox::information(this, "Add workout", "The workout has been removed.");
     workouts->removeWorkout(date.toInt());
+
+    ui->listWidgetRemoveShow->clear();
+    ui->listWidgetRemoveShow->addItem(workouts->toString());
+
+
 }
