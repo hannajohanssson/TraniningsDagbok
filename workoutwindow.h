@@ -27,6 +27,10 @@ private slots:
 
     void on_pushButton_goBack_clicked();
 
+    void on_pushButtonRemove_clicked();
+
+    void on_pushButtonRemoveSave_clicked();
+
 private:
     Ui::workoutWindow *ui;
     WorkoutRegister* workouts;

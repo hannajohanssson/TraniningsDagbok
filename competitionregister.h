@@ -39,14 +39,14 @@ public:
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);
     int getNrOfWorkouts();
+    int removeLatest();
+
+
 
     //sortera tävlingar efter finalplace - ha i competitionregister
     //QString sortedByPlace() const;
 
-    template <typename T>
-    int partition(T* competitions,int start,int end);
-    template <typename T>
-    void quicksort(T* competitions, int start, int end);
+
 
 };
 

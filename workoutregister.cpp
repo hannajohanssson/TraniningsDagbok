@@ -27,6 +27,20 @@ void WorkoutRegister::Expand()
     workouts = temp;
 }
 
+int WorkoutRegister::Find(const Workouts &date) const
+{
+    int index = -1;
+    for(int i =0; i<count; i--)
+    {
+        if (date == *workouts[i])
+        {
+            index = i;
+            i = count;
+        }
+    }
+    return index;
+}
+
 void WorkoutRegister::addWorkout(int date, const QString &workout)
 {
     if (count == capacity)
@@ -41,7 +55,7 @@ QString WorkoutRegister::toString() const
     QString retString = "";
     for(int i=0; i<count; i++)
     {
-        retString = workouts[i]->toString();
+        retString += workouts[i]->toString() + "\n";
     }
     return retString;
 }
@@ -87,4 +101,17 @@ int WorkoutRegister::getNrOfWorkouts() const
 {
     return count;
 
+}
+
+bool WorkoutRegister::removeWorkout(const int& date)
+{
+    Workouts toRemove(date, "temp");
+    int index = Find(toRemove);
+    if(index != -1)
+    {
+        delete workouts[index];
+        workouts[index] = workouts[--count];
+        workouts[count] = nullptr;
+    }
+    return index != -1;
 }

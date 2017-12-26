@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>643</width>
+    <width>1038</width>
     <height>509</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>30</x>
      <y>90</y>
-     <width>83</width>
+     <width>91</width>
      <height>23</height>
     </rect>
    </property>
@@ -31,7 +31,7 @@
     <rect>
      <x>30</x>
      <y>130</y>
-     <width>83</width>
+     <width>91</width>
      <height>23</height>
     </rect>
    </property>
@@ -105,8 +105,8 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>190</y>
-     <width>75</width>
+     <y>210</y>
+     <width>91</width>
      <height>23</height>
     </rect>
    </property>
@@ -162,6 +162,55 @@
    </property>
    <property name="text">
     <string>All workouts:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonRemove">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove Workout</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelRemove">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>80</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add date to remove (YYMMDD):</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditRemove">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>80</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonRemoveSave">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>130</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove</string>
    </property>
   </widget>
  </widget>

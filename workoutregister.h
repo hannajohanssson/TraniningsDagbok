@@ -21,7 +21,7 @@ private:
     int count;
 
     void Expand();
-    //int Find(const Workouts& workout) const;
+    int Find(const Workouts& date) const;
 
 public:
     WorkoutRegister();
@@ -34,6 +34,7 @@ public:
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);
     int getNrOfWorkouts() const;
+    bool removeWorkout(const int& date);
 
 };
 

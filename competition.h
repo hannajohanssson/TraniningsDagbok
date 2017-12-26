@@ -40,6 +40,8 @@ public:
     void setCompetitionInfo(const QString& competitionInfo);
     void setFinalPlace(const int finalPlace);
 
+    bool operator<(const Competition& other) const;
+
     QString toString() const;
 
 

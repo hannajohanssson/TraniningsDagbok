@@ -71,6 +71,11 @@ QString Workouts::toString() const
 
 }
 
+bool Workouts::operator==(const Workouts &other) const
+{
+    return this->getDate() == other.getDate();
+}
+
 //från dirs
 //void Workouts::saveToFile(QString fileName)
 //{

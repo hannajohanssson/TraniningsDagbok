@@ -88,6 +88,12 @@ int CompetitionRegister::getNrOfWorkouts()
     return nrOfCompetitions;
 }
 
+int CompetitionRegister::removeLatest()
+{
+    delete competitions[nrOfCompetitions];
+    return nrOfCompetitions --;
+}
+
 
 
 //QString CompetitionRegister::sortedByPlace() const
@@ -102,31 +108,4 @@ int CompetitionRegister::getNrOfWorkouts()
 //    return retstring;
 //}
 
-template <typename T>
-int CompetitionRegister::partition(CompetitionRegister::T *competitions, int start, int end)
-{
-    int pivot = start;
-        T pivotValue = acompetitionsrr[pivot];
-        for (int i = start + 1; i <= end; i++)
-        {
-            if (competitions[i] < pivotValue)
-            {
-                std::swap(competitions[i], competitions[pivot + 1]);
-                std::swap(competitions[pivot], competitions[pivot + 1]);
-                pivot++;
-            }
-        }
-        return pivot;
 
-}
-
-template <typename T>
-void CompetitionRegister::quicksort(T *competitions, int start, int end)
-{
-    if (start < end)
-        {
-            int pivot = partition(competitions, start, end);
-            quicksort(competitions, start, pivot - 1);		//vänstra sidan
-            quicksort(competitions, pivot + 1, end);			//höger sida
-        }
-}

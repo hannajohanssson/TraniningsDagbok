@@ -3,6 +3,7 @@
 #include "workouts.h"
 #include "workoutregister.h"
 #include <QMessageBox>
+#include <iostream>
 
 
 
@@ -13,6 +14,8 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->setupUi(this);
     this-> workouts = workouts;
 
+    //skriva ut antal workoouts hittills, .getNrOfWorkouts()
+
     ui->label_date->hide();
     ui->label_workout->hide();
     ui->lineEdit_date->hide();
@@ -20,6 +23,10 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->pushButton_save->hide();
     ui->listWidgetShowWorkouts->hide();
     ui->labelShowAllWorkouts->hide();
+    ui->labelRemove->hide();
+    ui->lineEditRemove->hide();
+    ui->pushButtonRemoveSave->hide();
+
 
 }
 
@@ -30,6 +37,7 @@ workoutWindow::~workoutWindow()
 //show workouts
 void workoutWindow::on_pushButton_4_clicked()
 {
+    ui->labelShowAllWorkouts->clear();
     WorkoutRegister w1;
     w1.addWorkout(171205, "Running 10km");
 
@@ -40,8 +48,9 @@ void workoutWindow::on_pushButton_4_clicked()
     ui->listWidgetShowWorkouts->addItem(workouts->toString());
 
 
-
-
+    ui->pushButtonRemoveSave->hide();
+    ui->labelRemove->hide();
+    ui->lineEditRemove->hide();
     ui->label_date->hide();
     ui->label_workout->hide();
     ui->lineEdit_date->hide();
@@ -54,7 +63,9 @@ void workoutWindow::on_pushButton_4_clicked()
 //add workout
 void workoutWindow::on_pushButton_2_clicked()
 {
-
+    ui->pushButtonRemoveSave->hide();
+    ui->labelRemove->hide();
+    ui->lineEditRemove->hide();
     ui->listWidgetShowWorkouts->hide();
     //visa datum mm
     ui->label_date->show();
@@ -87,4 +98,28 @@ void workoutWindow::on_pushButton_goBack_clicked()
 {
     this->close();
     parentWidget()->show();
+}
+
+void workoutWindow::on_pushButtonRemove_clicked()
+{
+    ui->pushButtonRemoveSave->show();
+    ui->labelRemove->show();
+    ui->lineEditRemove->show();
+    ui->label_date->hide();
+    ui->label_workout->hide();
+    ui->lineEdit_date->hide();
+    ui->textEdit_WorkoutDescription->hide();
+    ui->pushButton_save->hide();
+    ui->listWidgetShowWorkouts->hide();
+
+
+
+}
+
+void workoutWindow::on_pushButtonRemoveSave_clicked()
+{
+    QString date = ui->lineEditRemove->text();
+    ui->lineEditRemove->clear();
+
+    workouts->removeWorkout(date.toInt());
 }

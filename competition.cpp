@@ -75,6 +75,13 @@ void Competition::setFinalPlace(const int finalPlace)
     this->finalPlace = finalPlace;
 }
 
+
+
+bool Competition::operator<(const Competition &other) const
+{
+    return this->finalPlace < other.getFinalPlace();
+}
+
 QString Competition::toString() const
 {
     QString retString;
