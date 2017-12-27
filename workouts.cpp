@@ -81,6 +81,8 @@ QString Workouts::ToStringSaveToFile() const
     QString retString;
     retString += QString::number(this->date) + "\n";
     retString += this->workout + "\n";
+    //quick fix
+    retString += "WORKOUT_END\n";
 
     return retString;
 }

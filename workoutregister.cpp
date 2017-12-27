@@ -131,9 +131,23 @@ void WorkoutRegister::readFromFile(QString fileName)
     int counterFile = in.readLine().toInt();
     for(int i=0; i<counterFile; i++)
     {
+        //int date = in.readLine().toInt();
+        //QString workout = in.readLine();
+        //addWorkout(date, workout);
+
+
         int date = in.readLine().toInt();
-        QString workout = in.readLine();
+        QString workout = "";
+        QString text = in.readLine();
+
+        //"WORKOUT_END\n"
+        while(!text.endsWith("WORKOUT_END"))
+        {
+            workout += text;
+            text = in.readLine();
+        }
         addWorkout(date, workout);
+
     }
 
     mFile.flush();
