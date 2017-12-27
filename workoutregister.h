@@ -35,6 +35,8 @@ public:
     void readFromFile(QString fileName);
     int getNrOfWorkouts() const;
     bool removeWorkout(const int& date);
+    //remove latest
+    QString ToStringSaveToFile() const;
 
 };
 

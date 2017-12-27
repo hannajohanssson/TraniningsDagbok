@@ -66,15 +66,53 @@ void WorkoutRegister::saveToFile(QString fileName)
 
     if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
     {
-        qDebug() << "Could not open file for writing";
-        return;
+//        qDebug() << "Could not open file for writing";
+//        return;
+        QTextStream out(stdout);
+        out << "Could not open file for writing" << "\n";
     }
     QTextStream out (&mFile);
-    out << toString() << "\n";
+    out << getNrOfWorkouts() << "\n";
+    out << ToStringSaveToFile();
+
+
+   // out<<ToStringSaveable();
+
+
+
+//    for (int i =0; i<getNrOfWorkouts(); i++)
+//    {
+//       //out << workouts[i]->toString() + "\n";
+//       out << workouts[i]->ToStringSaveToFile() + "\n";
+//    }
+
+
 //spara alla mha array
 
     mFile.flush();
     mFile.close();                          //om ngt skrivs - stäng den igen!
+
+
+    //gamla koden
+
+//    QFile mFile(fileName);
+
+//    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
+//    {
+//        qDebug() << "Could not open file for writing";
+//        return;
+//    }
+//    QTextStream out (&mFile);
+
+//    out << toString() << "\n";
+////spara alla mha array
+
+//    mFile.flush();
+//    mFile.close();
+
+
+
+
 
 }
 
@@ -84,16 +122,42 @@ void WorkoutRegister::readFromFile(QString fileName)
 
     if(!mFile.open(QFile::ReadOnly | QFile::Text))
     {
-        qDebug() << "Could not open file for reading";
-        return;
+//        qDebug() << "Could not open file for reading";
+//        return;
+        QTextStream out(stdout);
+        out << "Could not open file for reading" << "\n";
     }
     QTextStream in (&mFile);
-    QString mText = in.readAll();
-
-    qDebug () << mText;
+    int counterFile = in.readLine().toInt();
+    for(int i=0; i<counterFile; i++)
+    {
+        int date = in.readLine().toInt();
+        QString workout = in.readLine();
+        addWorkout(date, workout);
+    }
 
     mFile.flush();
     mFile.close();
+
+
+
+
+    //Gamla koden
+
+//    QFile mFile(fileName);
+
+//    if(!mFile.open(QFile::ReadOnly | QFile::Text))
+//    {
+//        qDebug() << "Could not open file for reading";
+//        return;
+//    }
+//    QTextStream in (&mFile);
+//    QString mText = in.readAll();
+
+//    qDebug () << mText;
+
+//    mFile.flush();
+//    mFile.close();
 
 }
 
@@ -114,4 +178,16 @@ bool WorkoutRegister::removeWorkout(const int& date)
         workouts[count] = nullptr;
     }
     return index != -1;
+}
+
+QString WorkoutRegister::ToStringSaveToFile() const
+{
+    QString retString = "";
+
+    for (int i=0; i<count; i++)
+    {
+        retString += workouts[i]->ToStringSaveToFile();
+    }
+
+    return retString;
 }

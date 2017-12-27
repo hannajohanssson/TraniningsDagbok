@@ -49,6 +49,8 @@ public:
 
 
 
+
+
 };
 
 #endif // COMPETITIONREGISTER_H

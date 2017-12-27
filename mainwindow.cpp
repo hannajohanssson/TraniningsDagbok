@@ -31,11 +31,16 @@ MainWindow::MainWindow(QWidget *parent) :
     //läsa från fil
     //workouts.readFromFile("filnamnet");
 
+    QString WorkoutsFile = "C:/Qt/Projektet/TraniningsDagbok/WorkoutsFile.txt";
+    workouts.readFromFile(WorkoutsFile);
+
 
         WorkoutRegister w1;
         w1.addWorkout(171205, "Running 10km");
 
         QString mFilename = "C:/Qt/Projektet/TraniningsDagbok/myfile.txt";
+
+
 
 
         w1.saveToFile(mFilename);
@@ -74,6 +79,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
     //läsa till fil
+    QString WorkoutsFile = "C:/Qt/Projektet/TraniningsDagbok/WorkoutsFile.txt";
+    workouts.saveToFile(WorkoutsFile);
 }
 
 ////workouts

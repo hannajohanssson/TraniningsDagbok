@@ -103,6 +103,10 @@ int CompetitionRegister::removeLatest()
 //    int index = 1000;
 //    for(int i=0; i<nrOfCompetitions; i++)
 //    {
+//        if (competitions->getFinalPlace() < index)
+//        {
+
+//        }
 
 
 //    }

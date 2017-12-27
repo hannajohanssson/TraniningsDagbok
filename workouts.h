@@ -29,6 +29,7 @@ public:
     void setWorkout(const QString& workout);
     QString toString() const;
     bool operator==(const Workouts& other) const;
+    QString ToStringSaveToFile() const;
 
     //ha i workoutregister
 //    void saveToFile(QString fileName);

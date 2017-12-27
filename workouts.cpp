@@ -76,6 +76,15 @@ bool Workouts::operator==(const Workouts &other) const
     return this->getDate() == other.getDate();
 }
 
+QString Workouts::ToStringSaveToFile() const
+{
+    QString retString;
+    retString += QString::number(this->date) + "\n";
+    retString += this->workout + "\n";
+
+    return retString;
+}
+
 //från dirs
 //void Workouts::saveToFile(QString fileName)
 //{
