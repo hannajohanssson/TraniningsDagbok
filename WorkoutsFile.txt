@@ -1,19 +1,19 @@
-6
-171201
-Running 10k
-WORKOUT_END
-171202
-Crossfit 1h
-WORKOUT_END
-171204
-Crossfit 2h
-WORKOUT_END
-171205
-Running 5k
+5
+171230
+Crossfit
+Löpning
 WORKOUT_END
 171227
 Löpning 6km
 WORKOUT_END
+171205
+BenböjWOD 12min
+WORKOUT_END
 171228
-Crossfit
+Löpning Crossfit
+WORKOUT_END
+171201
+WODAMRAP 20 min
+burpees
+wallballs
 WORKOUT_END

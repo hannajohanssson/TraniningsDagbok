@@ -45,14 +45,19 @@ void workoutWindow::on_pushButton_4_clicked()
     ui->listWidgetShowWorkouts->clear();
     ui->labelNrOfWorkouts->hide();
     ui->labelShowAllWorkouts->clear();
-    WorkoutRegister w1;
-    w1.addWorkout(171205, "Running 10km");
+//    WorkoutRegister w1;
+//    w1.addWorkout(171205, "Running 10km");
 
     ui->labelShowAllWorkouts->show();
 
     ui->listWidgetShowWorkouts->show();
-    ui->listWidgetShowWorkouts->addItem(w1.toString());     //ej skriva ut igen??
+    //ui->listWidgetShowWorkouts->addItem(w1.toString());     //ej skriva ut igen??
     ui->listWidgetShowWorkouts->addItem(workouts->toString());
+
+
+
+
+
 
 
     ui->listWidgetRemoveShow->hide();

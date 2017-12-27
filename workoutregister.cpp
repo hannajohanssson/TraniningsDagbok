@@ -143,6 +143,10 @@ void WorkoutRegister::readFromFile(QString fileName)
         //"WORKOUT_END\n"
         while(!text.endsWith("WORKOUT_END"))
         {
+
+            if(workout.length() > text.length())
+                workout += "\n";
+
             workout += text;
             text = in.readLine();
         }
