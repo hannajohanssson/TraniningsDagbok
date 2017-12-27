@@ -31,6 +31,9 @@ public:
 
     //returnerar samtliga workouts
     QString toString() const;
+
+    //fixa en funktion för att få workout på plats index
+    Workouts* getWorkout(int index);
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);
     int getNrOfWorkouts() const;

@@ -66,7 +66,7 @@ void CompetitionWindow::on_pushButtonShow_clicked()
                            "\n  B/ 4 rounds: 20 cal row, 20 burpee boxjump over, 5 high snatch, 3 OHS.\n";
     QString name1 = "Juleböj";
     CompetitionRegister c1;
-    c1.addCompetition(171210, name1, 3, description1, 8);
+    c1.addCompetition(171210, name1, 3, 8, description1);
     ui->listWidgetShowCompetitions->addItem(c1.toString());
 
     ui->listWidgetShowCompetitions->show();
@@ -119,7 +119,7 @@ void CompetitionWindow::on_pushButtonSave_clicked()
 
 
 
-    competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), description, place.toInt());
+    competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), place.toInt(), description);
 
     //ui->listWidgetTest->addItem(competitions->toString());
 

@@ -1,4 +1,4 @@
-5
+8
 171230
 Crossfit
 Löpning
@@ -7,13 +7,25 @@ WORKOUT_END
 Löpning 6km
 WORKOUT_END
 171205
-BenböjWOD 12min
+Benböj
+WOD 12min
 WORKOUT_END
 171228
-Löpning Crossfit
+Löpning 
+Crossfit
 WORKOUT_END
 171201
-WODAMRAP 20 min
+WOD
+AMRAP 20 min
 burpees
 wallballs
+WORKOUT_END
+171207
+Crossfit
+WORKOUT_END
+171203
+Löpning
+WORKOUT_END
+123344
+Mer rader :)
 WORKOUT_END

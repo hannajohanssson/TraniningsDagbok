@@ -34,12 +34,13 @@ public:
     CompetitionRegister();
     ~CompetitionRegister();
 
-    void addCompetition(int date, QString& name, int nrOfEvents, QString& competitionInfo, int finalPlace);
+    void addCompetition(int date, QString& name, int nrOfEvents, int finalPlace, QString& competitionInfo);
     QString toString() const;
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);
     int getNrOfWorkouts();
     int removeLatest();
+    QString ToStringSaveToFile() const;
 
 
 

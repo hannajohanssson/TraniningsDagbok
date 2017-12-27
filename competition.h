@@ -43,6 +43,8 @@ public:
     bool operator<(const Competition& other) const;
 
     QString toString() const;
+    QString ToStringSaveToFile() const;
+
 
 
 

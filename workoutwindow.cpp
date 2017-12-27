@@ -52,8 +52,10 @@ void workoutWindow::on_pushButton_4_clicked()
 
     ui->listWidgetShowWorkouts->show();
     //ui->listWidgetShowWorkouts->addItem(w1.toString());     //ej skriva ut igen??
-    ui->listWidgetShowWorkouts->addItem(workouts->toString());
 
+    //ui->listWidgetShowWorkouts->addItem(workouts->toString());
+    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+        ui->listWidgetShowWorkouts->addItem(workouts->getWorkout(i)->toString());
 
 
 

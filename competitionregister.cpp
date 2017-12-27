@@ -25,7 +25,7 @@ CompetitionRegister::~CompetitionRegister()
 
 }
 
-void CompetitionRegister::addCompetition(int date, QString &name, int nrOfEvents, QString &competitionInfo, int finalPlace)
+void CompetitionRegister::addCompetition(int date, QString &name, int nrOfEvents, int finalPlace, QString &competitionInfo)
 {
    if (nrOfCompetitions == capacity)
             {
@@ -50,18 +50,17 @@ void CompetitionRegister::saveToFile(QString fileName)
 {
     QFile mFile(fileName);
 
-    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
+    if(!mFile.open(QFile::WriteOnly | QFile::Text))
     {
-        qDebug() << "Could not open file for writing";
-        return;
+        QTextStream out(stdout);
+        out << "Could not open file for writing" << "\n";
     }
     QTextStream out (&mFile);
-    out << toString() << "\n";
-//spara alla mha array
+    out << getNrOfWorkouts() << "\n";
+    out << ToStringSaveToFile();
 
     mFile.flush();
-    mFile.close();                          //om ngt skrivs - stäng den igen!
-
+    mFile.close();
 
 }
 
@@ -71,13 +70,36 @@ void CompetitionRegister::readFromFile(QString fileName)
 
     if(!mFile.open(QFile::ReadOnly | QFile::Text))
     {
-        qDebug() << "Could not open file for reading";
-        return;
+        QTextStream out(stdout);
+        out << "Could not open file for reading" << "\n";
     }
     QTextStream in (&mFile);
-    QString mText = in.readAll();
+    int counterFile = in.readLine().toInt();
+    for(int i=0; i<counterFile; i++)
+    {
+        //ADD: int date, QString& name, int nrOfEvents, QString& competitionInfo, int finalPlace
 
-    qDebug () << mText;
+        int date = in.readLine().toInt();
+        QString name = in.readLine();
+        int nrOfEvents = in.readLine().toInt();
+        QString competitionInfo = "";
+        int finalPlace = in.readLine().toInt();
+
+        QString text = in.readLine();
+
+        //"WORKOUT_END\n"
+        while(!text.endsWith("WORKOUT_END\n"))
+        {
+
+            if(competitionInfo.length() > 0)
+                 competitionInfo += "\n";
+
+            competitionInfo += text;
+            text = in.readLine();
+        }
+        addCompetition(date, name, nrOfEvents, finalPlace, competitionInfo);
+
+    }
 
     mFile.flush();
     mFile.close();
@@ -93,6 +115,18 @@ int CompetitionRegister::removeLatest()
     delete competitions[nrOfCompetitions-1];
     nrOfCompetitions--;
     return nrOfCompetitions;
+}
+
+QString CompetitionRegister::ToStringSaveToFile() const
+{
+    QString retString = "";
+
+    for (int i=0; i<nrOfCompetitions; i++)
+    {
+        retString += competitions[i]->ToStringSaveToFile();
+    }
+
+    return retString;
 }
 
 

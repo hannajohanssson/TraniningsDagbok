@@ -92,3 +92,16 @@ QString Competition::toString() const
     retString += "Description of the competition:\n" + competitionInfo + "\n";
     return retString;
 }
+
+QString Competition::ToStringSaveToFile() const
+{
+    QString retString;
+    retString += this->name + "\n";
+    retString += QString::number(this->date) + "\n";
+    retString += QString::number(finalPlace) + "\n";
+    retString += QString::number(nrOfEvents) + "\n";
+    retString += competitionInfo + "\n";
+    retString += "WORKOUT_END\n";
+
+    return retString;
+}

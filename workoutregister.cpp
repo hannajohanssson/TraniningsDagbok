@@ -60,14 +60,19 @@ QString WorkoutRegister::toString() const
     return retString;
 }
 
+Workouts* WorkoutRegister::getWorkout(int index)
+{
+    if(index < 0)index = 0;
+    else if(index >= getNrOfWorkouts())index = 0;
+    return workouts[index];
+}
+
 void WorkoutRegister::saveToFile(QString fileName)
 {
     QFile mFile(fileName);
 
-    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
+    if(!mFile.open(QFile::WriteOnly | QFile::Text))
     {
-//        qDebug() << "Could not open file for writing";
-//        return;
         QTextStream out(stdout);
         out << "Could not open file for writing" << "\n";
     }
@@ -75,22 +80,8 @@ void WorkoutRegister::saveToFile(QString fileName)
     out << getNrOfWorkouts() << "\n";
     out << ToStringSaveToFile();
 
-
-   // out<<ToStringSaveable();
-
-
-
-//    for (int i =0; i<getNrOfWorkouts(); i++)
-//    {
-//       //out << workouts[i]->toString() + "\n";
-//       out << workouts[i]->ToStringSaveToFile() + "\n";
-//    }
-
-
-//spara alla mha array
-
     mFile.flush();
-    mFile.close();                          //om ngt skrivs - stäng den igen!
+    mFile.close();
 
 
     //gamla koden
@@ -122,8 +113,6 @@ void WorkoutRegister::readFromFile(QString fileName)
 
     if(!mFile.open(QFile::ReadOnly | QFile::Text))
     {
-//        qDebug() << "Could not open file for reading";
-//        return;
         QTextStream out(stdout);
         out << "Could not open file for reading" << "\n";
     }
@@ -131,23 +120,18 @@ void WorkoutRegister::readFromFile(QString fileName)
     int counterFile = in.readLine().toInt();
     for(int i=0; i<counterFile; i++)
     {
-        //int date = in.readLine().toInt();
-        //QString workout = in.readLine();
-        //addWorkout(date, workout);
-
-
         int date = in.readLine().toInt();
         QString workout = "";
         QString text = in.readLine();
 
         //"WORKOUT_END\n"
-        while(!text.endsWith("WORKOUT_END"))
+        while(!text.endsWith("WORKOUT_END\n"))
         {
-
-            if(workout.length() > text.length())
+            if(workout.length() > 0)
                 workout += "\n";
 
             workout += text;
+
             text = in.readLine();
         }
         addWorkout(date, workout);

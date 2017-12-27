@@ -57,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent) :
                                "\n  B/ 4 rounds: 20 cal row, 20 burpee boxjump over, 5 high snatch, 3 OHS.\n";
         QString name1 = "Juleböj";
         CompetitionRegister c1;
-        c1.addCompetition(171210, name1, 3, description1, 8);
+        c1.addCompetition(171210, name1, 3, 8, description1);
 
 
 
