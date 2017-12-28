@@ -34,6 +34,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QString WorkoutsFile = "C:/Qt/Projektet/TraniningsDagbok/WorkoutsFile.txt";
     workouts.readFromFile(WorkoutsFile);
 
+    QString competitionsFile = "C:/Qt/Projektet/TraniningsDagbok/competitionsFile.txt";
+    competitions.readFromFile(competitionsFile);
+
 
         WorkoutRegister w1;
         w1.addWorkout(171205, "Running 10km");
@@ -81,6 +84,9 @@ MainWindow::~MainWindow()
     //läsa till fil
     QString WorkoutsFile = "C:/Qt/Projektet/TraniningsDagbok/WorkoutsFile.txt";
     workouts.saveToFile(WorkoutsFile);
+
+    QString competitionsFile = "C:/Qt/Projektet/TraniningsDagbok/competitionsFile.txt";
+    competitions.saveToFile(competitionsFile);
 }
 
 ////workouts
@@ -101,4 +107,9 @@ void MainWindow::on_pushButtonCompetitions_clicked()
 {
     mCompetitionWindow = new CompetitionWindow(&competitions, this);
     mCompetitionWindow -> show();
+}
+
+void MainWindow::on_pushButtonExit_clicked()
+{
+    this->close();
 }

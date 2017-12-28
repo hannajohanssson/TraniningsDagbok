@@ -77,18 +77,18 @@ void CompetitionRegister::readFromFile(QString fileName)
     int counterFile = in.readLine().toInt();
     for(int i=0; i<counterFile; i++)
     {
-        //ADD: int date, QString& name, int nrOfEvents, QString& competitionInfo, int finalPlace
 
-        int date = in.readLine().toInt();
         QString name = in.readLine();
+        int date = in.readLine().toInt();
         int nrOfEvents = in.readLine().toInt();
-        QString competitionInfo = "";
         int finalPlace = in.readLine().toInt();
+        QString competitionInfo = "";
+
 
         QString text = in.readLine();
 
         //"WORKOUT_END\n"
-        while(!text.endsWith("WORKOUT_END\n"))
+        while(!text.endsWith("WORKOUT_END"))
         {
 
             if(competitionInfo.length() > 0)
@@ -127,6 +127,39 @@ QString CompetitionRegister::ToStringSaveToFile() const
     }
 
     return retString;
+}
+
+Competition *CompetitionRegister::getCompetition(int index)
+{
+    if(index < 0)index = 0;
+    else if(index >= getNrOfWorkouts())index = 0;
+    return competitions[index];
+}
+
+QString CompetitionRegister::sortedByPlace() const
+{
+    QString retstring;
+       int index = 1000;
+       int placeInArr = -1;
+        for(int i=0; i<nrOfCompetitions; i++)
+        {
+            if (competitions[i]->getFinalPlace() < index)
+            {
+                index = competitions[i]->getFinalPlace();
+                placeInArr = i;
+                if(i != nrOfCompetitions)
+                {
+                   competitions[0] = competitions[placeInArr];
+                   competitions[placeInArr] = competitions[0];
+
+                   retstring += competitions[i]->toString();
+                }
+
+            }
+
+        }
+     return retstring;
+
 }
 
 

@@ -87,8 +87,8 @@ QString Competition::toString() const
     QString retString;
     retString += "Name: " + name + "\n";
     retString += "Date: " + QString::number(date) +"\n";
-    retString += "Placement: " + QString::number(finalPlace) + "\n";
     retString += "Number of Events: " + QString::number(nrOfEvents) + "\n";
+    retString += "Placement: " + QString::number(finalPlace) + "\n";
     retString += "Description of the competition:\n" + competitionInfo + "\n";
     return retString;
 }
@@ -98,8 +98,8 @@ QString Competition::ToStringSaveToFile() const
     QString retString;
     retString += this->name + "\n";
     retString += QString::number(this->date) + "\n";
-    retString += QString::number(finalPlace) + "\n";
     retString += QString::number(nrOfEvents) + "\n";
+    retString += QString::number(finalPlace) + "\n";
     retString += competitionInfo + "\n";
     retString += "WORKOUT_END\n";
 

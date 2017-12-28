@@ -81,6 +81,10 @@ void PRwindow::on_ButtonShowPR_clicked()
 
 void PRwindow::on_ButtonAddPRweight_clicked()
 {
+    ui->lineEditTime->hide();
+    ui->lineEdit_7Distance->hide();
+    ui->label_5Distance->hide();
+    ui->label_6Time->hide();
     ui->labelNama->show();
     ui->label_2Date->show();
     ui->label_3Weight->show();
@@ -96,6 +100,10 @@ void PRwindow::on_ButtonAddPRweight_clicked()
 
 void PRwindow::on_ButtonAddPRrunning_clicked()
 {
+    ui->lineEdit_2Reps->hide();
+    ui->lineEdit_4Weight->hide();
+    ui->label_3Weight->hide();
+    ui->label_4Reps->hide();
     ui->labelNama->show();
     ui->label_2Date->show();
     ui->label_5Distance->show();

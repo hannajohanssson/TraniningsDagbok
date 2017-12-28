@@ -43,6 +43,12 @@ public:
     QString ToStringSaveToFile() const;
 
 
+    Competition* getCompetition(int index);
+
+
+    QString sortedByPlace() const;
+
+
 
 
     //sortera tävlingar efter finalplace - ha i competitionregister

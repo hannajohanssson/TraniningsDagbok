@@ -221,6 +221,16 @@
     <string>Remove Latest Competition</string>
    </property>
   </widget>
+  <widget class="QListWidget" name="listWidgetSorted">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>181</width>
+     <height>221</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -125,7 +125,7 @@ void WorkoutRegister::readFromFile(QString fileName)
         QString text = in.readLine();
 
         //"WORKOUT_END\n"
-        while(!text.endsWith("WORKOUT_END\n"))
+        while(!text.endsWith("WORKOUT_END"))
         {
             if(workout.length() > 0)
                 workout += "\n";
