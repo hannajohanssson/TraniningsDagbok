@@ -14,9 +14,6 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->setupUi(this);
     this-> workouts = workouts;
 
-
-
-    //skriva ut antal workoouts hittills, .getNrOfWorkouts()
     QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
     ui->labelNrOfWorkouts->setText(nrOfWorkouts);
 
@@ -31,7 +28,12 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->lineEditRemove->hide();
     ui->pushButtonRemoveSave->hide();
     ui->listWidgetRemoveShow->hide();
-
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->hide();
+    ui->labelFind->hide();
+    ui->pushButtonFindSave->hide();
+    ui->labelRemove_2->hide();
+    ui->labelFind_2->hide();
 
 }
 
@@ -42,24 +44,16 @@ workoutWindow::~workoutWindow()
 //show workouts
 void workoutWindow::on_pushButton_4_clicked()
 {
+    ui->labelShowAllWorkouts->show();
     ui->listWidgetShowWorkouts->clear();
     ui->labelNrOfWorkouts->hide();
-    ui->labelShowAllWorkouts->clear();
-//    WorkoutRegister w1;
-//    w1.addWorkout(171205, "Running 10km");
-
-    ui->labelShowAllWorkouts->show();
+    ui->listWidgetShowWorkouts->clear();
 
     ui->listWidgetShowWorkouts->show();
-    //ui->listWidgetShowWorkouts->addItem(w1.toString());     //ej skriva ut igen??
 
     //ui->listWidgetShowWorkouts->addItem(workouts->toString());
     for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
         ui->listWidgetShowWorkouts->addItem(workouts->getWorkout(i)->toString());
-
-
-
-
 
 
     ui->listWidgetRemoveShow->hide();
@@ -71,8 +65,12 @@ void workoutWindow::on_pushButton_4_clicked()
     ui->lineEdit_date->hide();
     ui->textEdit_WorkoutDescription->hide();
     ui->pushButton_save->hide();
-
-
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->hide();
+    ui->labelFind->hide();
+    ui->pushButtonFindSave->hide();
+    ui->labelRemove_2->hide();
+    ui->labelFind_2->hide();
 }
 
 //add workout
@@ -93,18 +91,20 @@ void workoutWindow::on_pushButton_2_clicked()
     ui->pushButton_save->show();
     ui->labelShowAllWorkouts->hide();
     ui->listWidgetRemoveShow->hide();
-
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->hide();
+    ui->labelFind->hide();
+    ui->pushButtonFindSave->hide();
+    ui->labelRemove_2->hide();
+    ui->labelFind_2->hide();
 }
 
 void workoutWindow::on_pushButton_save_clicked()
 {
-
     QString date = ui->lineEdit_date->text();
     QString workoutText = ui->textEdit_WorkoutDescription->toPlainText();
     ui->lineEdit_date->clear();
     ui->textEdit_WorkoutDescription->clear();
-
-
 
     QMessageBox::information(this, "Add workout", "The workout has been added.");
     workouts->addWorkout(date.toInt(), workoutText);
@@ -121,6 +121,14 @@ void workoutWindow::on_pushButton_goBack_clicked()
 
 void workoutWindow::on_pushButtonRemove_clicked()
 {
+    ui->listWidgetRemoveShow->show();
+    ui->listWidgetRemoveShow->clear();
+    ui->labelShowAllWorkouts->hide();
+
+    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+        ui->listWidgetRemoveShow->addItem(workouts->getWorkout(i)->toString());
+
+
     ui->pushButtonRemoveSave->show();
     ui->labelRemove->show();
     ui->lineEditRemove->show();
@@ -130,11 +138,13 @@ void workoutWindow::on_pushButtonRemove_clicked()
     ui->textEdit_WorkoutDescription->hide();
     ui->pushButton_save->hide();
     ui->listWidgetShowWorkouts->hide();
-    ui->listWidgetRemoveShow->show();
-    ui->listWidgetRemoveShow->addItem(workouts->toString());
-
-
-
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->hide();
+    ui->labelFind->hide();
+    ui->pushButtonFindSave->hide();
+    ui->labelNrOfWorkouts->hide();
+    ui->labelRemove_2->show();
+    ui->labelFind_2->hide();
 }
 
 void workoutWindow::on_pushButtonRemoveSave_clicked()
@@ -146,8 +156,47 @@ void workoutWindow::on_pushButtonRemoveSave_clicked()
     workouts->removeWorkout(date.toInt());
 
     ui->listWidgetRemoveShow->clear();
-    ui->listWidgetRemoveShow->addItem(workouts->toString());
 
+    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+        ui->listWidgetRemoveShow->addItem(workouts->getWorkout(i)->toString());
+}
 
+void workoutWindow::on_pushButton_clicked()
+{
+    ui->labelShowAllWorkouts->hide();
+    ui->labelRemove->hide();
+    ui->lineEditRemove->hide();
+    ui->pushButtonRemoveSave->hide();
+    ui->listWidgetRemoveShow->hide();
+    ui->label_date->hide();
+    ui->label_workout->hide();
+    ui->lineEdit_date->hide();
+    ui->textEdit_WorkoutDescription->hide();
+    ui->pushButton_save->hide();
+    ui->listWidgetShowWorkouts->hide();
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->show();
+    ui->labelFind->show();
+    ui->pushButtonFindSave->show();
+    ui->labelNrOfWorkouts->hide();
+    ui->labelRemove_2->hide();
+    ui->labelFind_2->show();
+}
 
+void workoutWindow::on_pushButtonFindSave_clicked()
+{
+    ui->label_date->hide();
+    ui->label_workout->hide();
+    ui->lineEdit_date->hide();
+    ui->textEdit_WorkoutDescription->hide();
+    ui->pushButton_save->hide();
+    ui->listWidgetShowWorkouts->hide();
+    ui->listWidgetShowFound->clear();
+    ui->listWidgetShowFound->show();
+    QString date = ui->lineEditFind->text();
+    ui->lineEditFind->clear();
+
+    QString foundWorkout = workouts->getSpecWorkoutString(date.toInt());
+
+    ui->listWidgetShowFound->addItem(foundWorkout);
 }

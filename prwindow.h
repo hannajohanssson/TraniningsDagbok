@@ -32,8 +32,6 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-    void on_dateEdit_userDateChanged(const QDate &date);
-
     void on_RemovePR_clicked();
 
 private:

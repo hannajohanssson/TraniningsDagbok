@@ -44,10 +44,6 @@ private:
 
     CompetitionRegister competitions;
     CompetitionWindow *mCompetitionWindow;
-
-//    CompetitionRegister competitions;
-//    CompetitionWindow *mCompetitionWindow;
-
 };
 
 #endif // MAINWINDOW_H

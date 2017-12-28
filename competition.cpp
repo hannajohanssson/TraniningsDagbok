@@ -7,7 +7,6 @@ Competition::Competition(int date, QString &name, int nrOfEvents, QString &compe
     this->nrOfEvents = nrOfEvents;
     this->competitionInfo = competitionInfo;
     this->finalPlace = finalPlace;
-
 }
 
 Competition::Competition()
@@ -17,7 +16,6 @@ Competition::Competition()
     this->nrOfEvents = 0;
     this->competitionInfo = "";
     this->finalPlace = 0;
-
 }
 
 Competition::~Competition()
@@ -74,8 +72,6 @@ void Competition::setFinalPlace(const int finalPlace)
 {
     this->finalPlace = finalPlace;
 }
-
-
 
 bool Competition::operator<(const Competition &other) const
 {

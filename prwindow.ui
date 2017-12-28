@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>435</height>
+    <width>496</width>
+    <height>365</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -213,24 +213,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5BesPR">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>340</y>
-     <width>81</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Best PR:</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -255,16 +237,6 @@
    </property>
    <property name="text">
     <string>Save</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_BestPR">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>370</y>
-     <width>401</width>
-     <height>431</height>
-    </rect>
    </property>
   </widget>
   <widget class="QListWidget" name="listWidget">
@@ -306,22 +278,6 @@
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>ButtonShowPR</sender>
-   <signal>clicked()</signal>
-   <receiver>label_5BesPR</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>50</x>
-     <y>52</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>46</x>
-     <y>342</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>ButtonAddPR</sender>
    <signal>clicked()</signal>

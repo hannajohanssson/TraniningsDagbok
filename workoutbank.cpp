@@ -29,11 +29,6 @@ bool workoutBank::operator==(const workoutBank &other) const
 
 }
 
-//bool workoutBank::operator==(const QString &) const
-//{
-//   return this->name == name;
-//}
-
 QString workoutBank::getName() const
 {
     return name;
@@ -60,13 +55,6 @@ QString workoutBank::toString() const
     retString += toStringSpecific() + "\n"; //om toStringSpecific innehåller int?
 
     return retString;
-
-//    std::stringstream ss;
-//        ss << getNameDate() + "\n";
-//        ss << toStringSpecific() + "\n";
-
-        return retString;
-
 }
 
 

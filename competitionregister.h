@@ -48,6 +48,9 @@ public:
 
     QString sortedByPlace() const;
 
+    int bestPlacement() const;
+    QString bestPlacementString() const;
+
 
 
 

@@ -11,9 +11,6 @@
 #include <QDir>
 #include <QFileInfo>
 
-
-
-
 class Competition
 {
 private:
@@ -25,7 +22,7 @@ private:
 
 public:
     Competition(int date, QString& name, int nrOfEvents, QString& competitionInfo, int finalPlace);
-    Competition(); //behövs tom?
+    Competition();
     ~Competition();
 
     int getDate() const;
@@ -44,10 +41,6 @@ public:
 
     QString toString() const;
     QString ToStringSaveToFile() const;
-
-
-
-
 
 };
 

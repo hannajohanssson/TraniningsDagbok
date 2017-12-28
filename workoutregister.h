@@ -9,14 +9,13 @@
 #include <QCoreApplication>         //behövs??
 #include <QDir>
 #include <QFileInfo>
-
 #include <QObject>
 #include <QWidget>
 
 class WorkoutRegister
 {
 private:
-    Workouts** workouts; //dubbelpekare??
+    Workouts** workouts;
     int capacity;
     int count;
 
@@ -40,6 +39,8 @@ public:
     bool removeWorkout(const int& date);
     //remove latest
     QString ToStringSaveToFile() const;
+    int getSpecWorkoutPlace(int userDate);
+    QString getSpecWorkoutString(int userDate);
 
 };
 

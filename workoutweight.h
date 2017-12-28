@@ -6,11 +6,10 @@
 class workoutWeight: public workoutBank
 {
 private:
-    int weight;     //kunna jämföra vikter och sortera efter högst vikt
+    int weight;
     int reps;
 
     QString toStringSpecific() const;
-
 public:
     workoutWeight(const QString& name, const QString& date, int weight, int reps);
     workoutWeight();
@@ -18,10 +17,8 @@ public:
 
     void setWeight(int weight);
     void setreps(int reps);
-
     int getWeight() const;
     int getReps() const;
-
 
 
     //jämföra vikter

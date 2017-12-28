@@ -29,9 +29,6 @@ private slots:
 
     void on_RemoveComp_clicked();
 
-    void on_pushButton_clicked();
-
-    void on_pushButtonRemove_clicked();
 
 private:
     Ui::CompetitionWindow *ui;

@@ -19,32 +19,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>90</y>
-     <width>91</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Show Workouts</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>130</y>
-     <width>91</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add Workout</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -107,19 +81,6 @@
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_goBack">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>210</y>
-     <width>91</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Go back</string>
-   </property>
-  </widget>
   <widget class="QListWidget" name="listWidgetShowWorkouts">
    <property name="geometry">
     <rect>
@@ -158,19 +119,6 @@
    </property>
    <property name="text">
     <string>All workouts:</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonRemove">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>170</y>
-     <width>91</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Remove Workout</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelRemove">
@@ -214,7 +162,7 @@
     <rect>
      <x>190</x>
      <y>160</y>
-     <width>411</width>
+     <width>291</width>
      <height>301</height>
     </rect>
    </property>
@@ -231,6 +179,139 @@
    <property name="text">
     <string/>
    </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonFindSave">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>130</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Find</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelFind">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>80</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add date to find (YYMMDD):</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditFind">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>80</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidgetShowFound">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>160</y>
+     <width>291</width>
+     <height>301</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelRemove_2">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>20</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Remove workout:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelFind_2">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>20</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Find workout:</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>111</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="text">
+       <string>Show Workouts</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Add Workout</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonRemove">
+      <property name="text">
+       <string>Remove Workout</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Find workout</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_goBack">
+      <property name="text">
+       <string>Go back</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

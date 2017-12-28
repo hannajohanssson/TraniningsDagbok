@@ -12,19 +12,12 @@ Workouts::Workouts(int date,const QString &workout)
 {
     this->date=date;
     this->workout=workout;
-//    count =0;
-//    capacity = 20;
-//    workoutsAll= new Workouts[capacity];
-    //readFromFile();
 }
 
 Workouts::Workouts()
 {
     date = 0;
     workout ="";
-//    count =0;
-//    capacity = 20;
-//    workoutsAll = new Workouts[capacity];
 }
 
 Workouts::~Workouts()
@@ -55,20 +48,12 @@ void  Workouts::setWorkout(const QString& workout)
 
 
 QString Workouts::toString() const
-{/*std::string retString;
-    retString += Location::ToString();
-    retString += "Population: " + std::to_string(population) + "\n";
-    retString += "Area: " + std::to_string(area) + "\n";
-    return retString;*/
-
+{
     QString retString;
     retString += "Date: " + QString::number(date) + "\n";
     retString += "Workout:\n" + workout + "\n";
 
     return retString;
-
-
-
 }
 
 bool Workouts::operator==(const Workouts &other) const
@@ -86,73 +71,3 @@ QString Workouts::ToStringSaveToFile() const
 
     return retString;
 }
-
-//från dirs
-//void Workouts::saveToFile(QString fileName)
-//{
-//    QFile mFile(fileName);
-
-//    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
-//    {
-//        qDebug() << "Could not open file for writing";
-//        return;
-//    }
-//    QTextStream out (&mFile);
-//    out << toString() << "\n";
-////spara alla mha array
-
-//    mFile.flush();
-//    mFile.close();                          //om ngt skrivs - stäng den igen!
-//}
-
-//void Workouts::readFromFile(QString fileName)
-//{
-//    QFile mFile(fileName);
-
-//    if(!mFile.open(QFile::ReadOnly | QFile::Text))
-//    {
-//        qDebug() << "Could not open file for reading";
-//        return;
-//    }
-//    QTextStream in (&mFile);
-//    QString mText = in.readAll();
-
-//    qDebug () << mText;
-
-//    mFile.flush();
-//    mFile.close();
-
-//}
-
-//void Workouts::addWorkout(int date, const QString &workout)
-//{
-
-//    //expandering
-
-//    //arr [counter ] = new klassnamn (date, namn)
-//    //workoutsAll[count] = new Workouts(date, workout);
-
-////    if (count < capacity)
-////    {
-////        workoutsAll[count].setDate();
-////        workoutsAll[count].setWorkout();
-////        count ++;
-////    }
-
-
-
-//}
-
-
-    //Lägga till i main!
-//    QString mFilename = "C:\Qt\Projektet\Testfiler, försök\myfile.txt";
-
-//    Write(mFilename);
-//    Read(mFilename);
-
-
-
-//}
-
-
-

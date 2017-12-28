@@ -15,9 +15,8 @@
 class Workouts
 {
 private:
-    int date;           //datum - medlemsvariabl, används för att söka på träningspass.
-                            //Sorteras efter datum i lista ( = i den ordning de är inlagda)
-    QString workout;        //Skriver in texten fritt, inte kunna sortera på ngt sätt.
+    int date;
+    QString workout;
 public:
     Workouts(int date,const QString& workout);
     Workouts();
@@ -30,14 +29,6 @@ public:
     QString toString() const;
     bool operator==(const Workouts& other) const;
     QString ToStringSaveToFile() const;
-
-    //ha i workoutregister
-//    void saveToFile(QString fileName);
-//    void readFromFile(QString fileName);
-    //void addWorkout(int date, const QString& workout);
-
-
-
 };
 
 #endif // WORKOUTS_H

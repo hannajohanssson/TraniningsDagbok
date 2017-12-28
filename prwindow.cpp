@@ -9,14 +9,12 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->setupUi(this);
     this->workoutbanks = workoutbanks;
 
-
     ui->ButtonAddPRrunning->hide();
     ui->ButtonAddPRweight->hide();
     ui->labelNama->hide();
     ui->label_2Date->hide();
     ui->label_3Weight->hide();
     ui->label_4Reps->hide();
-    ui->label_5BesPR->hide();
     ui->label_5Distance->hide();
     ui->label_6Time->hide();
     ui->lineEditTime->hide();
@@ -28,10 +26,6 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->pushButton->hide();
     ui->pushButton_2->hide();
     ui->listWidget->hide();
-    ui->textEdit_BestPR->hide();
-
-
-
 }
 
 PRwindow::~PRwindow()
@@ -43,22 +37,14 @@ void PRwindow::on_ButtonAddPR_clicked()
 {
     ui->ButtonAddPRrunning->show();
     ui->ButtonAddPRweight->show();
-
 }
 
 void PRwindow::on_ButtonShowPR_clicked()
 {
-    ui->label_5BesPR->show();
-    ui->textEdit_BestPR->show();
-
-
-
     workoutBankRegister wb1;
     workoutBankRegister wb2;
     wb1.addWorkoutWeight("Deadlift", "20171214", 130, 1);
     wb2.addWorkoutRunning("Running", "20171205", 10, 50);
-
-
 
     ui->listWidget->show();
     ui->listWidget->addItem(wb1.getAllString());
@@ -93,9 +79,7 @@ void PRwindow::on_ButtonAddPRweight_clicked()
     ui->lineEdit_4Weight->show();
     ui->lineEdit_5Date->show();
     ui->lineEdit_6Name->show();
-
     ui->pushButton->show();
-
 }
 
 void PRwindow::on_ButtonAddPRrunning_clicked()
@@ -108,16 +92,11 @@ void PRwindow::on_ButtonAddPRrunning_clicked()
     ui->label_2Date->show();
     ui->label_5Distance->show();
     ui->label_6Time->show();
-
     ui->lineEditTime->show();
-
     ui->lineEdit_5Date->show();
     ui->lineEdit_6Name->show();
     ui->lineEdit_7Distance->show();
-
     ui->pushButton_2->show();
-
-
 }
 
 //save workout weight
@@ -126,13 +105,10 @@ void PRwindow::on_pushButton_clicked()
     ui->listWidget->show();
     QString name = ui->lineEdit_6Name->text();
     ui->lineEdit_6Name->clear();
-
     QString date = ui->lineEdit_5Date->text();
     ui->lineEdit_5Date->clear();
-
     QString weight = ui->lineEdit_4Weight->text();
     ui->lineEdit_4Weight->clear();
-
     QString reps = ui->lineEdit_2Reps->text();
     ui->lineEdit_2Reps->clear();
 
@@ -158,7 +134,6 @@ void PRwindow::on_pushButton_clicked()
 //    ui->listWidget->addItem(workoutbanks->toString());
 
 
-
     ui->labelNama->hide();
     ui->label_2Date->hide();
     ui->label_3Weight->hide();
@@ -168,9 +143,6 @@ void PRwindow::on_pushButton_clicked()
     ui->lineEdit_5Date->hide();
     ui->lineEdit_6Name->hide();
     ui->pushButton->hide();
-
-
-
 }
 
 //save PR running
@@ -179,17 +151,10 @@ void PRwindow::on_pushButton_2_clicked()
     ui->listWidget->show();
     QString name = ui->lineEdit_6Name->text();
     ui->lineEdit_6Name->clear();
-
     QString date = ui->lineEdit_5Date->text();
     ui->lineEdit_5Date->clear();
-
-    //QString date = ui->dateEditAddDate->saveGeometry();
-
-   // QString date = ui->dateEditAddDate->date();
-
     QString distance = ui->lineEdit_7Distance->text();
     ui->lineEdit_7Distance->clear();
-
     QString time = ui->lineEditTime->text();
     ui->lineEditTime->clear();
 
@@ -210,22 +175,15 @@ void PRwindow::on_pushButton_2_clicked()
 
     delete[] arr;
 
-
-
-
     ui->labelNama->hide();
     ui->label_2Date->hide();
-
     ui->label_5Distance->hide();
     ui->label_6Time->hide();
     ui->lineEditTime->hide();
-
     ui->lineEdit_5Date->hide();
     ui->lineEdit_6Name->hide();
     ui->lineEdit_7Distance->hide();
     ui->pushButton_2->hide();
-
-
 }
 
 //Go back

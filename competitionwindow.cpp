@@ -15,7 +15,6 @@ CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget 
     ui->setupUi(this);
     this->competitions = competitions;
 
-
     ui->Date->hide();
     ui->Description->hide();
     ui->FinalPlace->hide();
@@ -29,7 +28,8 @@ CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget 
     ui->textEditDescription->hide();
     ui->pushButtonSave->hide();
     ui->listWidgetShowCompetitions->hide();
-
+    ui->labelBestComp->hide();
+    ui->RubrikAllComp->hide();
 }
 
 CompetitionWindow::~CompetitionWindow()
@@ -39,6 +39,8 @@ CompetitionWindow::~CompetitionWindow()
 
 void CompetitionWindow::on_pushButtonAddCompetition_clicked()
 {
+    ui->RubrikAllComp->hide();
+    ui->labelBestComp->hide();
     ui->listWidgetShowCompetitions->hide();
     ui->Date->show();
     ui->Description->show();
@@ -52,13 +54,12 @@ void CompetitionWindow::on_pushButtonAddCompetition_clicked()
     ui->lineEditPlace->show();
     ui->textEditDescription->show();
     ui->pushButtonSave->show();
-
-
-
+    ui->RubrikAllComp->hide();
 }
 
 void CompetitionWindow::on_pushButtonShow_clicked()
 {
+    ui->RubrikAllComp->show();
     ui->listWidgetShowCompetitions->clear();
 //    QString description1 = "1: 60 cal AB, 50 synced wallbaalls, 40 dumbell snatches, 30 goblet suats."
 //                           "\n2:5 Deadlifts 115kg, 5 pullups, 5 T2B, 1 ropeclimb. Adding 5 each round."
@@ -73,8 +74,11 @@ void CompetitionWindow::on_pushButtonShow_clicked()
     for(int i = 0; i < competitions->getNrOfWorkouts(); i++)
         ui->listWidgetShowCompetitions->addItem(competitions->getCompetition(i)->toString());
 
-    ui->listWidgetSorted->addItem(competitions->sortedByPlace());
+    //ui->listWidgetSorted->addItem(competitions->sortedByPlace());
 
+    ui->labelBestComp->show();
+    QString bestComp = competitions->bestPlacementString();
+    ui->labelBestComp->setText(bestComp);
 
     ui->Date->hide();
     ui->Description->hide();
@@ -92,42 +96,20 @@ void CompetitionWindow::on_pushButtonShow_clicked()
 
 void CompetitionWindow::on_pushButtonSave_clicked()
 {
-
-
     QString date = ui->lineEditDate->text();
     ui->lineEditDate->clear();
-
     QString name  = ui->lineEditName->text();
     ui->lineEditName->clear();
-
     QString nrOfEvents = ui->lineEditNrOfEvents->text();
     ui->lineEditNrOfEvents->clear();
-
-//Kolla tutoril hur det sparas
-
-//    QString description = ui->textEditDescription->text();
-//    ui->textEditDescription->clear();
-
-//    QString description = ui->lineEditTestDescription->text();
-//    ui->lineEditTestDescription->clear();
-
     QString description = ui->textEditDescription->toPlainText();
     ui->textEditDescription->clear();
-
     QString place = ui->lineEditPlace->text();
     ui->lineEditPlace->clear();
 
-
-
     competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), place.toInt(), description);
 
-    //ui->listWidgetTest->addItem(competitions->toString());
-
-
-
-
-
-
+    ui->RubrikAllComp->hide();
 }
 
 void CompetitionWindow::on_pushButtonGoBack_clicked()
@@ -138,8 +120,8 @@ void CompetitionWindow::on_pushButtonGoBack_clicked()
 
 void CompetitionWindow::on_RemoveComp_clicked()
 {
+    ui->RubrikAllComp->hide();
     competitions->removeLatest();
     ui->listWidgetShowCompetitions->hide();
     QMessageBox::information(this, "Remove latest competition", "The latest competition has been removed.");
-
 }

@@ -1,7 +1,5 @@
 #include "workoutregister.h"
 
-
-
 WorkoutRegister::WorkoutRegister()
 {
     count = 0;
@@ -13,7 +11,6 @@ WorkoutRegister::~WorkoutRegister()
 {
 
 }
-
 
 void WorkoutRegister::Expand()
 {
@@ -82,29 +79,6 @@ void WorkoutRegister::saveToFile(QString fileName)
 
     mFile.flush();
     mFile.close();
-
-
-    //gamla koden
-
-//    QFile mFile(fileName);
-
-//    if(!mFile.open(QFile::WriteOnly | QFile::Text))         //öppnar filen
-//    {
-//        qDebug() << "Could not open file for writing";
-//        return;
-//    }
-//    QTextStream out (&mFile);
-
-//    out << toString() << "\n";
-////spara alla mha array
-
-//    mFile.flush();
-//    mFile.close();
-
-
-
-
-
 }
 
 void WorkoutRegister::readFromFile(QString fileName)
@@ -140,33 +114,11 @@ void WorkoutRegister::readFromFile(QString fileName)
 
     mFile.flush();
     mFile.close();
-
-
-
-
-    //Gamla koden
-
-//    QFile mFile(fileName);
-
-//    if(!mFile.open(QFile::ReadOnly | QFile::Text))
-//    {
-//        qDebug() << "Could not open file for reading";
-//        return;
-//    }
-//    QTextStream in (&mFile);
-//    QString mText = in.readAll();
-
-//    qDebug () << mText;
-
-//    mFile.flush();
-//    mFile.close();
-
 }
 
 int WorkoutRegister::getNrOfWorkouts() const
 {
     return count;
-
 }
 
 bool WorkoutRegister::removeWorkout(const int& date)
@@ -190,6 +142,31 @@ QString WorkoutRegister::ToStringSaveToFile() const
     {
         retString += workouts[i]->ToStringSaveToFile();
     }
+    return retString;
+}
+
+int WorkoutRegister::getSpecWorkoutPlace(int userDate)
+{
+    int placeInArr = -1;
+    for(int i=0; i<count; i++)
+    {
+        if(workouts[i]->getDate() == userDate)
+        {
+
+            placeInArr = i;
+        }
+    }
+    return placeInArr;
+}
+
+QString WorkoutRegister::getSpecWorkoutString(int userDate)
+{
+    QString retString;
+    int placeInArr = getSpecWorkoutPlace(userDate);
+    if(placeInArr == -1)
+        retString = "No Workout was found";
+    else
+        retString = workouts[placeInArr]->toString();
 
     return retString;
 }

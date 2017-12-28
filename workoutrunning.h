@@ -7,7 +7,7 @@ class workoutRunning: public workoutBank
 {
 private:
     int distance;
-    int time; //eller double?
+    int time;
 
     QString toStringSpecific() const;
 

@@ -8,15 +8,15 @@ void CompetitionRegister::Expand()
     {
         temp[i] = competitions[i];
     }
-    delete[] competitions; //avallokerar gammal array
-    competitions = temp; //låt medlemsvariabeln workoutbanks peka på den nya större arrayen istället
+    delete[] competitions;
+    competitions = temp;
 }
 
 CompetitionRegister::CompetitionRegister()
 {
     nrOfCompetitions = 0;
     capacity = 20;
-    competitions = new Competition*[capacity];       //pekare om dubbelpekare
+    competitions = new Competition*[capacity];
 }
 
 
@@ -32,7 +32,6 @@ void CompetitionRegister::addCompetition(int date, QString &name, int nrOfEvents
                 Expand();
             }
     competitions[nrOfCompetitions++] = new Competition(date, name, nrOfEvents, competitionInfo, finalPlace);
-
 }
 
 QString CompetitionRegister::toString() const
@@ -43,13 +42,11 @@ QString CompetitionRegister::toString() const
         retString += competitions[i]->toString();
     }
     return retString;
-
 }
 
 void CompetitionRegister::saveToFile(QString fileName)
 {
     QFile mFile(fileName);
-
     if(!mFile.open(QFile::WriteOnly | QFile::Text))
     {
         QTextStream out(stdout);
@@ -61,13 +58,11 @@ void CompetitionRegister::saveToFile(QString fileName)
 
     mFile.flush();
     mFile.close();
-
 }
 
 void CompetitionRegister::readFromFile(QString fileName)
 {
     QFile mFile(fileName);
-
     if(!mFile.open(QFile::ReadOnly | QFile::Text))
     {
         QTextStream out(stdout);
@@ -77,28 +72,22 @@ void CompetitionRegister::readFromFile(QString fileName)
     int counterFile = in.readLine().toInt();
     for(int i=0; i<counterFile; i++)
     {
-
         QString name = in.readLine();
         int date = in.readLine().toInt();
         int nrOfEvents = in.readLine().toInt();
         int finalPlace = in.readLine().toInt();
         QString competitionInfo = "";
-
-
         QString text = in.readLine();
 
         //"WORKOUT_END\n"
         while(!text.endsWith("WORKOUT_END"))
         {
-
             if(competitionInfo.length() > 0)
                  competitionInfo += "\n";
-
             competitionInfo += text;
             text = in.readLine();
         }
         addCompetition(date, name, nrOfEvents, finalPlace, competitionInfo);
-
     }
 
     mFile.flush();
@@ -114,6 +103,8 @@ int CompetitionRegister::removeLatest()
 {
     delete competitions[nrOfCompetitions-1];
     nrOfCompetitions--;
+    if (nrOfCompetitions == 0)
+        delete competitions[nrOfCompetitions];
     return nrOfCompetitions;
 }
 
@@ -125,7 +116,6 @@ QString CompetitionRegister::ToStringSaveToFile() const
     {
         retString += competitions[i]->ToStringSaveToFile();
     }
-
     return retString;
 }
 
@@ -154,12 +144,33 @@ QString CompetitionRegister::sortedByPlace() const
 
                    retstring += competitions[i]->toString();
                 }
-
             }
-
         }
      return retstring;
+}
 
+int CompetitionRegister::bestPlacement() const
+{
+    int bestPlacement = 1000;
+    int placeInArr = -1;
+
+    for(int i=0; i<nrOfCompetitions; i++)
+    {
+        if(competitions[i]->getFinalPlace() < bestPlacement)
+        {
+            bestPlacement = competitions[i]->getFinalPlace();
+            placeInArr = i;
+        }
+    }
+    return placeInArr;
+}
+
+QString CompetitionRegister::bestPlacementString() const
+{
+    int placeInArr = bestPlacement();
+    QString retString;
+    retString = competitions[placeInArr]->toString();
+    return retString;
 }
 
 

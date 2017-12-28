@@ -9,11 +9,10 @@ int workoutBankRegister::Find(const workoutBank &workout) const
         if(workout == *workoutbanks[i])
         {
             index =i;
-            i = nrOfWorkouts;   //avbryter loopen
+            i = nrOfWorkouts;
         }
     }
     return index;
-
 }
 
 void workoutBankRegister::Expand()
@@ -24,10 +23,8 @@ void workoutBankRegister::Expand()
     {
         temp[i] = workoutbanks[i];
     }
-    delete[] workoutbanks; //avallokerar gammal array
-    workoutbanks = temp; //låt medlemsvariabeln workoutbanks peka på den nya större arrayen istället
-
-
+    delete[] workoutbanks;
+    workoutbanks = temp;
 }
 
 workoutBankRegister::workoutBankRegister(int capacity)
@@ -41,8 +38,6 @@ workoutBankRegister::~workoutBankRegister()
 {
 
 }
-
-
 
 bool workoutBankRegister::addWorkoutWeight(const QString &name, const QString &date, int weight, int reps)
 {
@@ -58,7 +53,6 @@ bool workoutBankRegister::addWorkoutWeight(const QString &name, const QString &d
         added = true;
     }
     return added;
-
 }
 
 bool workoutBankRegister::addWorkoutRunning(const QString &name, const QString &date, int distance, int time)
