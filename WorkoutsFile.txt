@@ -1,4 +1,4 @@
-6
+5
 171230
 Crossfit
 Löpning
@@ -19,7 +19,4 @@ WOD
 AMRAP 20 min
 burpees
 wallballs
-WORKOUT_END
-171207
-Crossfit
 WORKOUT_END

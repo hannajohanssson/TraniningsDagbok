@@ -41,6 +41,7 @@ public:
 
     QString toString() const;
     QString ToStringSaveToFile() const;
+    QString toStringBestComp() const;
 
 };
 

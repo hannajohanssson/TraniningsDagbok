@@ -30,6 +30,7 @@ CompetitionWindow::CompetitionWindow(CompetitionRegister* competitions, QWidget 
     ui->listWidgetShowCompetitions->hide();
     ui->labelBestComp->hide();
     ui->RubrikAllComp->hide();
+    ui->RubrikBestComp->hide();
 }
 
 CompetitionWindow::~CompetitionWindow()
@@ -55,6 +56,7 @@ void CompetitionWindow::on_pushButtonAddCompetition_clicked()
     ui->textEditDescription->show();
     ui->pushButtonSave->show();
     ui->RubrikAllComp->hide();
+    ui->RubrikBestComp->hide();
 }
 
 void CompetitionWindow::on_pushButtonShow_clicked()
@@ -92,24 +94,33 @@ void CompetitionWindow::on_pushButtonShow_clicked()
     ui->lineEditPlace->hide();
     ui->textEditDescription->hide();
     ui->pushButtonSave->hide();
+    ui->RubrikBestComp->show();
 }
 
 void CompetitionWindow::on_pushButtonSave_clicked()
 {
-    QString date = ui->lineEditDate->text();
-    ui->lineEditDate->clear();
-    QString name  = ui->lineEditName->text();
-    ui->lineEditName->clear();
-    QString nrOfEvents = ui->lineEditNrOfEvents->text();
-    ui->lineEditNrOfEvents->clear();
-    QString description = ui->textEditDescription->toPlainText();
-    ui->textEditDescription->clear();
-    QString place = ui->lineEditPlace->text();
-    ui->lineEditPlace->clear();
+    if(ui->lineEditDate->text().length() == 0 || ui->lineEditName->text().length() == 0 || ui->lineEditNrOfEvents->text().length() == 0 || ui->textEditDescription->toPlainText().length() == 0 || ui->lineEditPlace->text().length() == 0)
+    {
+        QMessageBox::information(this, "Add competition", "No competition has been added. Try again.");
+    }
+    else
+    {
+        QString date = ui->lineEditDate->text();
+        ui->lineEditDate->clear();
+        QString name  = ui->lineEditName->text();
+        ui->lineEditName->clear();
+        QString nrOfEvents = ui->lineEditNrOfEvents->text();
+        ui->lineEditNrOfEvents->clear();
+        QString description = ui->textEditDescription->toPlainText();
+        ui->textEditDescription->clear();
+        QString place = ui->lineEditPlace->text();
+        ui->lineEditPlace->clear();
 
-    competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), place.toInt(), description);
-
+        QMessageBox::information(this, "Add competition", "The competition has been added.");
+        competitions->addCompetition(date.toInt(), name, nrOfEvents.toInt(), place.toInt(), description);
+    }
     ui->RubrikAllComp->hide();
+    ui->RubrikBestComp->hide();
 }
 
 void CompetitionWindow::on_pushButtonGoBack_clicked()
@@ -121,7 +132,16 @@ void CompetitionWindow::on_pushButtonGoBack_clicked()
 void CompetitionWindow::on_RemoveComp_clicked()
 {
     ui->RubrikAllComp->hide();
-    competitions->removeLatest();
     ui->listWidgetShowCompetitions->hide();
-    QMessageBox::information(this, "Remove latest competition", "The latest competition has been removed.");
+    ui->labelBestComp->hide();
+    ui->RubrikBestComp->hide();
+    if(competitions->removeLatest())
+    {
+        QMessageBox::information(this, "Remove latest competition", "The latest competition has been removed.");
+    }
+    else
+    {
+       QMessageBox::information(this, "Remove latest competition", "There are no competitions added.");
+    }
+
 }

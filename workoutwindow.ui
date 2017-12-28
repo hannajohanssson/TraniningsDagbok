@@ -266,7 +266,7 @@
     <string>Find workout:</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -314,6 +314,23 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButtonRemove</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_goBack</tabstop>
+  <tabstop>listWidgetShowWorkouts</tabstop>
+  <tabstop>lineEdit_date</tabstop>
+  <tabstop>lineEditRemove</tabstop>
+  <tabstop>listWidgetRemoveShow</tabstop>
+  <tabstop>lineEditFind</tabstop>
+  <tabstop>pushButtonFindSave</tabstop>
+  <tabstop>pushButton_save</tabstop>
+  <tabstop>textEdit_WorkoutDescription</tabstop>
+  <tabstop>listWidgetShowFound</tabstop>
+  <tabstop>pushButtonRemoveSave</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

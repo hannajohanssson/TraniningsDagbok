@@ -32,6 +32,7 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->pushButton->hide();
     ui->pushButton_2->hide();
     ui->listWidget->hide();
+    ui->labelPRs->hide();
 }
 
 PRwindow::~PRwindow()
@@ -59,42 +60,23 @@ void PRwindow::on_ButtonAddPR_clicked()
     ui->pushButton->hide();
     ui->pushButton_2->hide();
     ui->listWidget->hide();
+    ui->labelPRs->hide();
 }
 
 void PRwindow::on_ButtonShowPR_clicked()
 {
-//    workoutBankRegister wb1;
-//    workoutBankRegister wb2;
-//    wb1.addWorkoutWeight("Deadlift", 20171214, 130, 1);
-//    wb2.addWorkoutRunning("Running", 20171205, 10, 50);
-
+    ui->labelPRs->show();
+    ui->listWidget->clear();
     ui->listWidget->show();
-//    ui->listWidget->addItem(wb1.getAllString());
-//    ui->listWidget->addItem(wb2.getAllString());
-    //ui->listWidget->addItem(workoutbanks->getAllString());
-
-
 
     for(int i = 0; i < workoutbanks->getNrOfWorkoutsPR(); i++)
         ui->listWidget->addItem(workoutbanks->getPR(i)->toString());
-
-
-
-    //visa bästa lyftet
-
-    //kan sortera här annars i workoutbankregister, göra en sorteringsfunktion
-
-    //sortera vikter
-//    int index = workoutbanks->getNrOfWorkoutsWeight();
-//    for(int i=0; i<index; i++)
-//    {
-//        if(workoutbanks[i].)
-//    }
 
 }
 
 void PRwindow::on_ButtonAddPRweight_clicked()
 {
+    ui->labelPRs->hide();
     ui->listWidget->hide();
     ui->lineEditTime->hide();
     ui->lineEdit_7Distance->hide();
@@ -109,10 +91,12 @@ void PRwindow::on_ButtonAddPRweight_clicked()
     ui->lineEdit_5Date->show();
     ui->lineEdit_6Name->show();
     ui->pushButton->show();
+    ui->pushButton_2->hide();   //save running
 }
 
 void PRwindow::on_ButtonAddPRrunning_clicked()
 {
+    ui->labelPRs->hide();
     ui->listWidget->hide();
     ui->lineEdit_2Reps->hide();
     ui->lineEdit_4Weight->hide();
@@ -127,29 +111,29 @@ void PRwindow::on_ButtonAddPRrunning_clicked()
     ui->lineEdit_6Name->show();
     ui->lineEdit_7Distance->show();
     ui->pushButton_2->show();
+    ui->pushButton->hide();
 }
 
 //save workout weight
 void PRwindow::on_pushButton_clicked()
 {
-    //if(ui->lineEdit_4Weight->text.length() = 0 || )
-        //QMessagebox - inget tillagt
-    ui->listWidget->clear();
-    ui->listWidget->show();
+    if(ui->lineEdit_4Weight->text().length() == 0 || ui->lineEdit_2Reps->text().length() == 0 || ui->lineEdit_6Name == 0 || ui->lineEdit_5Date->text().length() == 0)
+        QMessageBox::information(this, "Add PR", "No PR has been added, try again.");
+    else
+    {
+        QString name = ui->lineEdit_6Name->text();
+        ui->lineEdit_6Name->clear();
+        QString date = ui->lineEdit_5Date->text();
+        ui->lineEdit_5Date->clear();
+        QString weight = ui->lineEdit_4Weight->text();
+        ui->lineEdit_4Weight->clear();
+        QString reps = ui->lineEdit_2Reps->text();
+        ui->lineEdit_2Reps->clear();
 
-    QString name = ui->lineEdit_6Name->text();
-    ui->lineEdit_6Name->clear();
-    QString date = ui->lineEdit_5Date->text();
-    ui->lineEdit_5Date->clear();
-    QString weight = ui->lineEdit_4Weight->text();
-    ui->lineEdit_4Weight->clear();
-    QString reps = ui->lineEdit_2Reps->text();
-    ui->lineEdit_2Reps->clear();
+        QMessageBox::information(0, QString("Information"), QString("Added weight"), QMessageBox::Ok);
 
-    QMessageBox::information(0, QString("Information"), QString("Added weight"), QMessageBox::Ok);
-
-
-    workoutbanks->addWorkoutWeight(name, date.toInt(), weight.toInt(), reps.toInt());
+        workoutbanks->addWorkoutWeight(name, date.toInt(), weight.toInt(), reps.toInt());
+    }
 
     int index = workoutbanks->getNrOfWorkoutsWeight();
 
@@ -178,20 +162,23 @@ void PRwindow::on_pushButton_clicked()
 //save PR running
 void PRwindow::on_pushButton_2_clicked()
 {
-    ui->listWidget->show();
-    QString name = ui->lineEdit_6Name->text();
-    ui->lineEdit_6Name->clear();
-    QString date = ui->lineEdit_5Date->text();
-    ui->lineEdit_5Date->clear();
-    QString distance = ui->lineEdit_7Distance->text();
-    ui->lineEdit_7Distance->clear();
-    QString time = ui->lineEditTime->text();
-    ui->lineEditTime->clear();
+    if(ui->lineEdit_7Distance->text().length() == 0 || ui->lineEditTime->text().length() == 0 || ui->lineEdit_6Name == 0 || ui->lineEdit_5Date->text().length() == 0)
+        QMessageBox::information(this, "Add PR", "No PR has been added, try again.");
+    else
+    {
+        QString name = ui->lineEdit_6Name->text();
+        ui->lineEdit_6Name->clear();
+        QString date = ui->lineEdit_5Date->text();
+        ui->lineEdit_5Date->clear();
+        QString distance = ui->lineEdit_7Distance->text();
+        ui->lineEdit_7Distance->clear();
+        QString time = ui->lineEditTime->text();
+        ui->lineEditTime->clear();
 
-    QMessageBox::information(0, QString("Information"), QString("Added running"), QMessageBox::Ok);
+        QMessageBox::information(0, QString("Information"), QString("Added running"), QMessageBox::Ok);
 
-
-    workoutbanks->addWorkoutRunning(name, date.toInt(), distance.toInt(), time.toInt());
+        workoutbanks->addWorkoutRunning(name, date.toInt(), distance.toInt(), time.toInt());
+    }
 
 
     int index = workoutbanks->getNrOfWorkoutsRunning();
@@ -223,9 +210,4 @@ void PRwindow::on_pushButton_3_clicked()
 {
     this->close();
     parentWidget()->show();
-}
-
-void PRwindow::on_RemovePR_clicked()
-{
-
 }

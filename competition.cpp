@@ -101,3 +101,12 @@ QString Competition::ToStringSaveToFile() const
 
     return retString;
 }
+
+QString Competition::toStringBestComp() const
+{
+    QString retString;
+    retString += "Name: " + name + "\n";
+    retString += "Date: " + QString::number(date) +"\n";
+    retString += "Placement: " + QString::number(finalPlace) + "\n";
+    return retString;
+}

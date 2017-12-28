@@ -101,11 +101,16 @@ int CompetitionRegister::getNrOfWorkouts()
 
 int CompetitionRegister::removeLatest()
 {
-    delete competitions[nrOfCompetitions-1];
-    nrOfCompetitions--;
     if (nrOfCompetitions == 0)
-        delete competitions[nrOfCompetitions];
-    return nrOfCompetitions;
+        return nrOfCompetitions;
+    else
+    {
+        delete competitions[nrOfCompetitions-1];
+        nrOfCompetitions--;
+
+        return nrOfCompetitions;
+    }
+
 }
 
 QString CompetitionRegister::ToStringSaveToFile() const
@@ -169,7 +174,7 @@ QString CompetitionRegister::bestPlacementString() const
 {
     int placeInArr = bestPlacement();
     QString retString;
-    retString = competitions[placeInArr]->toString();
+    retString = competitions[placeInArr]->toStringBestComp();
     return retString;
 }
 

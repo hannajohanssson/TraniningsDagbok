@@ -5,8 +5,6 @@
 #include <QMessageBox>
 #include <iostream>
 
-
-
 workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     QDialog(parent),
     ui(new Ui::workoutWindow)
@@ -101,13 +99,23 @@ void workoutWindow::on_pushButton_2_clicked()
 
 void workoutWindow::on_pushButton_save_clicked()
 {
-    QString date = ui->lineEdit_date->text();
-    QString workoutText = ui->textEdit_WorkoutDescription->toPlainText();
-    ui->lineEdit_date->clear();
-    ui->textEdit_WorkoutDescription->clear();
+    if(ui->lineEdit_date->text().length() == 0 || ui->textEdit_WorkoutDescription->toPlainText().length() == 0)
+    {
+        QMessageBox::information(this, "Add workout", "No workout has been added. Try again.");
+    }
+    else
+    {
 
-    QMessageBox::information(this, "Add workout", "The workout has been added.");
-    workouts->addWorkout(date.toInt(), workoutText);
+
+        QString date = ui->lineEdit_date->text();
+        QString workoutText = ui->textEdit_WorkoutDescription->toPlainText();
+        ui->lineEdit_date->clear();
+        ui->textEdit_WorkoutDescription->clear();
+
+        QMessageBox::information(this, "Add workout", "The workout has been added.");
+        workouts->addWorkout(date.toInt(), workoutText);
+    }
+
 
     QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
     ui->labelNrOfWorkouts->setText(nrOfWorkouts);
@@ -149,13 +157,25 @@ void workoutWindow::on_pushButtonRemove_clicked()
 
 void workoutWindow::on_pushButtonRemoveSave_clicked()
 {
-    QString date = ui->lineEditRemove->text();
-    ui->lineEditRemove->clear();
+    if (ui->lineEditRemove->text().length() == 0)
+    {
+        QMessageBox::information(this, "Remove workout", "No workout has been removed. Try again.");
+    }
+    else
+    {
+        QString date = ui->lineEditRemove->text();
+        ui->lineEditRemove->clear();
 
-    QMessageBox::information(this, "Remove workout", "The workout has been removed.");
-    workouts->removeWorkout(date.toInt());
+        if(workouts->removeWorkout(date.toInt()))
+        {
+          QMessageBox::information(this, "Remove workout", "The workout has been removed.");
+        }
+        else
+            QMessageBox::information(this, "Remove workout", "The workout has not been removed.");
 
-    ui->listWidgetRemoveShow->clear();
+        ui->listWidgetRemoveShow->clear();
+    }
+
 
     for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
         ui->listWidgetRemoveShow->addItem(workouts->getWorkout(i)->toString());
@@ -193,10 +213,18 @@ void workoutWindow::on_pushButtonFindSave_clicked()
     ui->listWidgetShowWorkouts->hide();
     ui->listWidgetShowFound->clear();
     ui->listWidgetShowFound->show();
-    QString date = ui->lineEditFind->text();
-    ui->lineEditFind->clear();
+    if (ui->lineEditFind->text().length() == 0)
+    {
+        QMessageBox::information(this, "Find workout", "Try again.");
+    }
+    else
+    {
+        QString date = ui->lineEditFind->text();
+        ui->lineEditFind->clear();
 
-    QString foundWorkout = workouts->getSpecWorkoutString(date.toInt());
+        QString foundWorkout = workouts->getSpecWorkoutString(date.toInt());
 
-    ui->listWidgetShowFound->addItem(foundWorkout);
+        ui->listWidgetShowFound->addItem(foundWorkout);
+    }
+
 }
