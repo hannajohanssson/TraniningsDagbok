@@ -7,12 +7,13 @@ class workoutBank
 {
 private:
 QString name;
-QString date;
+int date;
 
 virtual QString toStringSpecific() const = 0;
 
+
 public:
-    workoutBank(const QString& name, const QString& date);
+    workoutBank(const QString& name, const int date);
     workoutBank();
     virtual ~workoutBank();
 
@@ -20,9 +21,11 @@ public:
     bool operator==(const workoutBank& other) const;
 
     QString getName() const;
-    QString getDate() const;
+    int getDate() const;
     QString getNameDate() const;
     QString toString() const;       //endast i basklassen
+
+    virtual QString toStringSpecificFile() const =0;
 
 //    void setName(const QString& name);
 //    void setDate(const QString& date);     //behövs denna??

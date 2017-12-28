@@ -2,12 +2,18 @@
 #include "ui_prwindow.h"
 #include "workoutbankregister.h"
 
+#include <QMessageBox>
+
 PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PRwindow)
 {
     ui->setupUi(this);
     this->workoutbanks = workoutbanks;
+
+
+    //läsa från fil
+    // WorkoutBanksFile
 
     ui->ButtonAddPRrunning->hide();
     ui->ButtonAddPRweight->hide();
@@ -37,19 +43,41 @@ void PRwindow::on_ButtonAddPR_clicked()
 {
     ui->ButtonAddPRrunning->show();
     ui->ButtonAddPRweight->show();
+    ui->listWidget->hide();
+    ui->labelNama->hide();
+    ui->label_2Date->hide();
+    ui->label_3Weight->hide();
+    ui->label_4Reps->hide();
+    ui->label_5Distance->hide();
+    ui->label_6Time->hide();
+    ui->lineEditTime->hide();
+    ui->lineEdit_2Reps->hide();
+    ui->lineEdit_4Weight->hide();
+    ui->lineEdit_5Date->hide();
+    ui->lineEdit_6Name->hide();
+    ui->lineEdit_7Distance->hide();
+    ui->pushButton->hide();
+    ui->pushButton_2->hide();
+    ui->listWidget->hide();
 }
 
 void PRwindow::on_ButtonShowPR_clicked()
 {
-    workoutBankRegister wb1;
-    workoutBankRegister wb2;
-    wb1.addWorkoutWeight("Deadlift", "20171214", 130, 1);
-    wb2.addWorkoutRunning("Running", "20171205", 10, 50);
+//    workoutBankRegister wb1;
+//    workoutBankRegister wb2;
+//    wb1.addWorkoutWeight("Deadlift", 20171214, 130, 1);
+//    wb2.addWorkoutRunning("Running", 20171205, 10, 50);
 
     ui->listWidget->show();
-    ui->listWidget->addItem(wb1.getAllString());
-    ui->listWidget->addItem(wb2.getAllString());
-    ui->listWidget->addItem(workoutbanks->getAllString());
+//    ui->listWidget->addItem(wb1.getAllString());
+//    ui->listWidget->addItem(wb2.getAllString());
+    //ui->listWidget->addItem(workoutbanks->getAllString());
+
+
+
+    for(int i = 0; i < workoutbanks->getNrOfWorkoutsPR(); i++)
+        ui->listWidget->addItem(workoutbanks->getPR(i)->toString());
+
 
 
     //visa bästa lyftet
@@ -67,6 +95,7 @@ void PRwindow::on_ButtonShowPR_clicked()
 
 void PRwindow::on_ButtonAddPRweight_clicked()
 {
+    ui->listWidget->hide();
     ui->lineEditTime->hide();
     ui->lineEdit_7Distance->hide();
     ui->label_5Distance->hide();
@@ -84,6 +113,7 @@ void PRwindow::on_ButtonAddPRweight_clicked()
 
 void PRwindow::on_ButtonAddPRrunning_clicked()
 {
+    ui->listWidget->hide();
     ui->lineEdit_2Reps->hide();
     ui->lineEdit_4Weight->hide();
     ui->label_3Weight->hide();
@@ -102,7 +132,11 @@ void PRwindow::on_ButtonAddPRrunning_clicked()
 //save workout weight
 void PRwindow::on_pushButton_clicked()
 {
+    //if(ui->lineEdit_4Weight->text.length() = 0 || )
+        //QMessagebox - inget tillagt
+    ui->listWidget->clear();
     ui->listWidget->show();
+
     QString name = ui->lineEdit_6Name->text();
     ui->lineEdit_6Name->clear();
     QString date = ui->lineEdit_5Date->text();
@@ -112,12 +146,14 @@ void PRwindow::on_pushButton_clicked()
     QString reps = ui->lineEdit_2Reps->text();
     ui->lineEdit_2Reps->clear();
 
-    workoutbanks->addWorkoutWeight(name, date, weight.toInt(), reps.toInt());
+    QMessageBox::information(0, QString("Information"), QString("Added weight"), QMessageBox::Ok);
+
+
+    workoutbanks->addWorkoutWeight(name, date.toInt(), weight.toInt(), reps.toInt());
 
     int index = workoutbanks->getNrOfWorkoutsWeight();
 
     QString* arr = new QString[index];
-
 
     workoutbanks->allWorkoutWeightAsString(arr, index);
 
@@ -126,13 +162,7 @@ void PRwindow::on_pushButton_clicked()
         ui->listWidget->addItem(arr[i]);
 
     }
-
-
     delete[] arr;
-
-//    //test
-//    ui->listWidget->addItem(workoutbanks->toString());
-
 
     ui->labelNama->hide();
     ui->label_2Date->hide();
@@ -158,13 +188,15 @@ void PRwindow::on_pushButton_2_clicked()
     QString time = ui->lineEditTime->text();
     ui->lineEditTime->clear();
 
-    workoutbanks->addWorkoutRunning(name, date, distance.toInt(), time.toInt());
+    QMessageBox::information(0, QString("Information"), QString("Added running"), QMessageBox::Ok);
+
+
+    workoutbanks->addWorkoutRunning(name, date.toInt(), distance.toInt(), time.toInt());
 
 
     int index = workoutbanks->getNrOfWorkoutsRunning();
 
     QString* arr = new QString[index];
-
 
     workoutbanks->allWorkoutRunningAsString(arr, index);
 
@@ -192,9 +224,6 @@ void PRwindow::on_pushButton_3_clicked()
     this->close();
     parentWidget()->show();
 }
-
-
-
 
 void PRwindow::on_RemovePR_clicked()
 {

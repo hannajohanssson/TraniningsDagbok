@@ -11,8 +11,9 @@ private:
 
     QString toStringSpecific() const;
 
+
 public:
-    workoutRunning(const QString& name, const QString& date, int distance, int time);
+    workoutRunning(const QString& name, int date, int distance, int time);
     workoutRunning();
     ~workoutRunning();
 
@@ -21,6 +22,9 @@ public:
 
     int getDistance() const;
     int getTime() const;
+
+    QString toStringSpecificFile() const;
+    QString ToStringSaveToFile() const;
 
     //sortera efter distans och sen tid
 };

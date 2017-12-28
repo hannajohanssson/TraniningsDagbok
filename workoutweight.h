@@ -10,8 +10,9 @@ private:
     int reps;
 
     QString toStringSpecific() const;
+
 public:
-    workoutWeight(const QString& name, const QString& date, int weight, int reps);
+    workoutWeight(const QString& name, int date, int weight, int reps);
     workoutWeight();
     ~workoutWeight();
 
@@ -19,6 +20,11 @@ public:
     void setreps(int reps);
     int getWeight() const;
     int getReps() const;
+
+    QString toStringSpecificFile() const;
+    QString ToStringSaveToFile() const;
+
+
 
 
     //jämföra vikter

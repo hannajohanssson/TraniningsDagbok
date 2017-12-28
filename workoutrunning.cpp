@@ -1,5 +1,7 @@
 #include "workoutrunning.h"
 
+#include <QMessageBox>
+
 QString workoutRunning::toStringSpecific() const
 {
     QString retString;
@@ -9,7 +11,18 @@ QString workoutRunning::toStringSpecific() const
     return retString;
 }
 
-workoutRunning::workoutRunning(const QString &name, const QString &date, int distance, int time)
+QString workoutRunning::toStringSpecificFile() const
+{
+    QString retString;
+    retString += QString::number(0) + "\n";
+    retString += QString::number(distance) + "\n";
+    retString += QString::number(time) + "\n";
+
+
+    return retString;
+}
+
+workoutRunning::workoutRunning(const QString &name, int date, int distance, int time)
     : workoutBank(name, date)
 {
     this->distance = distance;
@@ -44,4 +57,14 @@ int workoutRunning::getDistance() const
 int workoutRunning::getTime() const
 {
     return time;
+}
+
+QString workoutRunning::ToStringSaveToFile() const
+{
+    QString retString;
+    retString += QString::number(this->distance) + "\n";
+    retString += QString::number(this->time) + "\n";
+    retString += "WORKOUT_END\n";
+
+    return retString;
 }

@@ -1,4 +1,5 @@
 #include "workoutbankregister.h"
+#include <QMessageBox>
 #include <typeinfo>
 
 int workoutBankRegister::Find(const workoutBank &workout) const
@@ -36,10 +37,10 @@ workoutBankRegister::workoutBankRegister(int capacity)
 
 workoutBankRegister::~workoutBankRegister()
 {
-
+    delete[] workoutbanks;
 }
 
-bool workoutBankRegister::addWorkoutWeight(const QString &name, const QString &date, int weight, int reps)
+bool workoutBankRegister::addWorkoutWeight(const QString &name, int date, int weight, int reps)
 {
     bool added = false;
     workoutWeight toAdd(name, date, weight, reps);
@@ -55,7 +56,7 @@ bool workoutBankRegister::addWorkoutWeight(const QString &name, const QString &d
     return added;
 }
 
-bool workoutBankRegister::addWorkoutRunning(const QString &name, const QString &date, int distance, int time)
+bool workoutBankRegister::addWorkoutRunning(const QString &name, int date, int distance, int time)
 {
     bool added = false;
     workoutRunning toAdd(name, date, distance, time);
@@ -79,6 +80,88 @@ QString workoutBankRegister::getAllString() const
         retString += workoutbanks[i]->toString() + "\n";
     }
     return retString;
+}
+
+void workoutBankRegister::saveToFile(QString fileName)
+{
+    QFile mFile(fileName);
+    if(!mFile.open(QFile::WriteOnly | QFile::Text))
+    {
+        QTextStream out(stdout);
+        out << "Could not open file for writing" << "\n";
+    }
+    QTextStream out (&mFile);
+    out << getNrOfWorkoutsPR() << "\n";
+    out << ToStringAllSaveToFile();
+
+    mFile.flush();
+    mFile.close();
+}
+
+void workoutBankRegister::readFromFile(QString fileName)
+{
+    QFile mFile(fileName);
+    if(!mFile.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream out(stdout);
+        out << "Could not open file for reading" << "\n";
+    }
+    QTextStream in (&mFile);
+    int counterFile = in.readLine().toInt();
+    for(int i=0; i<counterFile; i++)
+    {
+        QString name = in.readLine();
+        int date = in.readLine().toInt();
+        int id = in.readLine().toInt();
+        int distance;
+        int time;
+        int weight;
+        int reps;
+        if (id == 0)
+        {
+            distance = in.readLine().toInt();
+            time = in.readLine().toInt();
+            addWorkoutRunning(name, date, distance, time);
+        }
+        else
+        {
+            weight = in.readLine().toInt();
+            reps = in.readLine().toInt();
+            addWorkoutWeight(name, date, weight, reps);
+        }
+
+        //runnig 0
+        //weight 1
+
+
+//        bool addWorkoutWeight(const QString& name, const QString& date, int weight, int reps);
+//        bool addWorkoutRunning(const QString& name, const QString& date, int distance, int time);
+
+
+
+
+    }
+
+    mFile.flush();
+    mFile.close();
+
+
+
+}
+
+QString workoutBankRegister::ToStringAllSaveToFile() const
+{
+    QString retString = "";
+
+    for (int i=0; i<nrOfWorkouts; i++)
+    {
+        retString += workoutbanks[i]->getNameDate();
+        retString += workoutbanks[i]->toStringSpecificFile();
+    }
+    return retString;
+
+
+
 }
 
 //QString workoutBankRegister::SortedWeights() const
@@ -212,6 +295,14 @@ bool workoutBankRegister::allWorkoutRunningAsString(QString *stringArr, int capa
         }
     }
     return retValue;
+
+}
+
+workoutBank *workoutBankRegister::getPR(int index)
+{
+    if(index < 0)index = 0;
+    else if(index >= getNrOfWorkoutsPR())index = 0;
+    return workoutbanks[index];
 
 }
 

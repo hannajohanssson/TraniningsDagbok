@@ -1,6 +1,6 @@
 #include "workoutbank.h"
 
-workoutBank::workoutBank(const QString &name, const QString &date)
+workoutBank::workoutBank(const QString &name, const int date)
 {
     this->name = name;
     this->date= date;
@@ -9,7 +9,7 @@ workoutBank::workoutBank(const QString &name, const QString &date)
 workoutBank::workoutBank()
 {
     name ="";
-    date ="";
+    date = 0;
 }
 
 workoutBank::~workoutBank()
@@ -34,7 +34,7 @@ QString workoutBank::getName() const
     return name;
 }
 
-QString workoutBank::getDate() const
+int workoutBank::getDate() const
 {
     return date;
 }
@@ -42,8 +42,8 @@ QString workoutBank::getDate() const
 QString workoutBank::getNameDate() const
 {
     QString retString;
-    retString += "Name: " + name + "\n";
-    retString += "Date: " + date + "\n";
+    retString += name + "\n";
+    retString += QString::number(date) + "\n";
 
     return retString;
 }
@@ -51,7 +51,8 @@ QString workoutBank::getNameDate() const
 QString workoutBank::toString() const
 {
     QString retString;
-    retString += getNameDate() + "\n";
+    retString += "Name: " + name + "\n";
+    retString += "Date: " + QString::number(date) + "\n";
     retString += toStringSpecific() + "\n"; //om toStringSpecific innehåller int?
 
     return retString;

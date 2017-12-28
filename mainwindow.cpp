@@ -31,6 +31,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QString competitionsFile = "C:/Qt/Projektet/TraniningsDagbok/competitionsFile.txt";
     competitions.readFromFile(competitionsFile);
+
+    QString WorkoutBanksFile = "C:/Qt/Projektet/TraniningsDagbok/WorkoutBanksFile.txt";
+    workoutbanks.readFromFile(WorkoutBanksFile);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -42,6 +47,9 @@ MainWindow::~MainWindow()
 
     QString competitionsFile = "C:/Qt/Projektet/TraniningsDagbok/competitionsFile.txt";
     competitions.saveToFile(competitionsFile);
+
+    QString WorkoutBanksFile = "C:/Qt/Projektet/TraniningsDagbok/WorkoutBanksFile.txt";
+    workoutbanks.saveToFile(WorkoutBanksFile);
 }
 
 ////workouts

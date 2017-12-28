@@ -10,7 +10,18 @@ QString workoutWeight::toStringSpecific() const
 
 }
 
-workoutWeight::workoutWeight(const QString &name, const QString &date, int weight, int reps)
+QString workoutWeight::toStringSpecificFile() const
+{
+    QString retString;
+    retString += QString::number(1) + "\n";
+    retString += QString::number(weight)  + "\n";
+    retString += QString::number(reps) + "\n";
+
+    return retString;
+
+}
+
+workoutWeight::workoutWeight(const QString &name, int date, int weight, int reps)
     : workoutBank(name, date)
 {
     this->weight = weight;
@@ -46,6 +57,17 @@ int workoutWeight::getWeight() const
 int workoutWeight::getReps() const
 {
     return reps;
+}
+
+QString workoutWeight::ToStringSaveToFile() const
+{
+    QString retString;
+    retString += 1;
+    retString += QString::number(this->weight) + "\n";
+    retString += QString::number(this->reps) + "\n";
+    retString += "WORKOUT_END\n";
+
+    return retString;
 }
 
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>496</width>
-    <height>365</height>
+    <width>626</width>
+    <height>456</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -223,27 +223,27 @@
     </rect>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>Save Weight</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>150</y>
-     <width>75</width>
+     <x>210</x>
+     <y>190</y>
+     <width>91</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>Save Running</string>
    </property>
   </widget>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>0</y>
+     <x>130</x>
+     <y>230</y>
      <width>321</width>
      <height>351</height>
     </rect>
@@ -276,6 +276,23 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>ButtonAddPR</tabstop>
+  <tabstop>ButtonShowPR</tabstop>
+  <tabstop>ButtonAddPRweight</tabstop>
+  <tabstop>ButtonAddPRrunning</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>lineEdit_6Name</tabstop>
+  <tabstop>lineEdit_5Date</tabstop>
+  <tabstop>lineEdit_4Weight</tabstop>
+  <tabstop>lineEdit_7Distance</tabstop>
+  <tabstop>lineEdit_2Reps</tabstop>
+  <tabstop>lineEditTime</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>RemovePR</tabstop>
+  <tabstop>listWidget</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
