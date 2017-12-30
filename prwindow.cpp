@@ -156,21 +156,7 @@ void PRwindow::on_pushButton_clicked()
         QString reps = ui->lineEdit_2Reps->text();
         ui->lineEdit_2Reps->clear();
 
-        if(ui->lineEdit_5Date->text().length() == 6)
-            QMessageBox::information(this, "test == 6", "ok");
-        else
-            QMessageBox::information(this, "test !=6", "ej ok", QString(ui->lineEdit_5Date->text()));
-//        if(ui->lineEdit_5Date->text().length() != 6)
-//        {
-//            QMessageBox::information(this, "Add date", "The date must be YYMMDD. Try again");
-//            QMessageBox::information(this, "test", QString(ui->lineEdit_5Date->text()));
-//        }
-//        else
-//        {
-//            QMessageBox::information(0, QString("Information"), QString("Added weight"), QMessageBox::Ok);
 
-//            workoutbanks->addWorkoutWeight(name, date.toInt(), weight.toInt(), reps.toInt());
-//        }
 
         QMessageBox::information(0, QString("Information"), QString("Added weight"), QMessageBox::Ok);
 
