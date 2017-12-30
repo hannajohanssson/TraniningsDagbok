@@ -38,6 +38,7 @@ public:
     int getNrOfWorkouts() const;
     bool removeWorkout(const int& date);
     //remove latest
+    int removeLatest();
     QString ToStringSaveToFile() const;
     int getSpecWorkoutPlace(int userDate);
     QString getSpecWorkoutString(int userDate);

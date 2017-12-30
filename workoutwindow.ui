@@ -313,6 +313,32 @@
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="pushButtonRemoveLatest">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>330</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove Latest</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonRemoveW">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>370</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove</string>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>pushButton_4</tabstop>

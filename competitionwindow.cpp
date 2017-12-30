@@ -135,8 +135,9 @@ void CompetitionWindow::on_RemoveComp_clicked()
     ui->listWidgetShowCompetitions->hide();
     ui->labelBestComp->hide();
     ui->RubrikBestComp->hide();
-    if(competitions->removeLatest())
+    if(competitions->getNrOfWorkouts() >0)
     {
+        competitions->removeLatest();
         QMessageBox::information(this, "Remove latest competition", "The latest competition has been removed.");
     }
     else

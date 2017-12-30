@@ -33,6 +33,7 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     ui->pushButton_2->hide();
     ui->listWidget->hide();
     ui->labelPRs->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 PRwindow::~PRwindow()
@@ -61,6 +62,7 @@ void PRwindow::on_ButtonAddPR_clicked()
     ui->pushButton_2->hide();
     ui->listWidget->hide();
     ui->labelPRs->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 void PRwindow::on_ButtonShowPR_clicked()
@@ -92,6 +94,7 @@ void PRwindow::on_ButtonAddPRweight_clicked()
     ui->lineEdit_6Name->show();
     ui->pushButton->show();
     ui->pushButton_2->hide();   //save running
+    ui->pushButtonRemoveLatest->hide();
 }
 
 void PRwindow::on_ButtonAddPRrunning_clicked()
@@ -112,6 +115,7 @@ void PRwindow::on_ButtonAddPRrunning_clicked()
     ui->lineEdit_7Distance->show();
     ui->pushButton_2->show();
     ui->pushButton->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 //save workout weight
@@ -157,6 +161,7 @@ void PRwindow::on_pushButton_clicked()
     ui->lineEdit_5Date->hide();
     ui->lineEdit_6Name->hide();
     ui->pushButton->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 //save PR running
@@ -203,6 +208,7 @@ void PRwindow::on_pushButton_2_clicked()
     ui->lineEdit_6Name->hide();
     ui->lineEdit_7Distance->hide();
     ui->pushButton_2->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 //Go back
@@ -210,4 +216,39 @@ void PRwindow::on_pushButton_3_clicked()
 {
     this->close();
     parentWidget()->show();
+}
+
+void PRwindow::on_pushButtonRemove_clicked()
+{
+    ui->pushButtonRemoveLatest->show();
+    ui->ButtonAddPRrunning->hide();
+    ui->ButtonAddPRweight->hide();
+    ui->labelNama->hide();
+    ui->label_2Date->hide();
+    ui->label_3Weight->hide();
+    ui->label_4Reps->hide();
+    ui->label_5Distance->hide();
+    ui->label_6Time->hide();
+    ui->lineEditTime->hide();
+    ui->lineEdit_2Reps->hide();
+    ui->lineEdit_4Weight->hide();
+    ui->lineEdit_5Date->hide();
+    ui->lineEdit_6Name->hide();
+    ui->lineEdit_7Distance->hide();
+    ui->pushButton->hide();
+    ui->pushButton_2->hide();
+    ui->labelPRs->hide();
+    ui->listWidget->clear();
+    ui->listWidget->show();
+
+    for(int i = 0; i < workoutbanks->getNrOfWorkoutsPR(); i++)
+        ui->listWidget->addItem(workoutbanks->getPR(i)->toString());
+
+
+
+}
+
+void PRwindow::on_pushButtonRemoveLatest_clicked()
+{
+
 }

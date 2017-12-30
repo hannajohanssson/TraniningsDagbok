@@ -32,6 +32,7 @@ public:
     bool addWorkoutWeight(const QString& name, int date, int weight, int reps);
     bool addWorkoutRunning(const QString& name, int date, int distance, int time);
     QString getAllString() const;
+    int removeLatest();
 
     void saveToFile(QString fileName);
     void readFromFile(QString fileName);

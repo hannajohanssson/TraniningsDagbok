@@ -82,6 +82,19 @@ QString workoutBankRegister::getAllString() const
     return retString;
 }
 
+int workoutBankRegister::removeLatest()
+{
+    if(nrOfWorkouts == 0)
+        return nrOfWorkouts;
+    else
+    {
+        delete workoutbanks[nrOfWorkouts-1];
+        nrOfWorkouts --;
+
+        return nrOfWorkouts;
+    }
+}
+
 void workoutBankRegister::saveToFile(QString fileName)
 {
     QFile mFile(fileName);
@@ -113,6 +126,8 @@ void workoutBankRegister::readFromFile(QString fileName)
         QString name = in.readLine();
         int date = in.readLine().toInt();
         int id = in.readLine().toInt();
+        //runnig 0
+        //weight 1
         int distance;
         int time;
         int weight;
@@ -129,15 +144,6 @@ void workoutBankRegister::readFromFile(QString fileName)
             reps = in.readLine().toInt();
             addWorkoutWeight(name, date, weight, reps);
         }
-
-        //runnig 0
-        //weight 1
-
-
-//        bool addWorkoutWeight(const QString& name, const QString& date, int weight, int reps);
-//        bool addWorkoutRunning(const QString& name, const QString& date, int distance, int time);
-
-
 
 
     }

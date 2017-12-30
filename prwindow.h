@@ -33,6 +33,10 @@ private slots:
     void on_pushButton_3_clicked();
 
 
+    void on_pushButtonRemove_clicked();
+
+    void on_pushButtonRemoveLatest_clicked();
+
 private:
     Ui::PRwindow *ui;
     workoutBankRegister* workoutbanks;

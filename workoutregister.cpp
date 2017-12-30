@@ -134,6 +134,19 @@ bool WorkoutRegister::removeWorkout(const int& date)
     return index != -1;
 }
 
+int WorkoutRegister::removeLatest()
+{
+    if (count == 0)
+        return count;
+    else
+    {
+        delete workouts[count-1];
+        count--;
+
+        return count;
+    }
+}
+
 QString WorkoutRegister::ToStringSaveToFile() const
 {
     QString retString = "";

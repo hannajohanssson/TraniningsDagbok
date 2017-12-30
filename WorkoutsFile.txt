@@ -1,22 +1,4 @@
-5
-171230
-Crossfit
-Löpning
-WORKOUT_END
-171203
-Löpning
-WORKOUT_END
-171205
-Benböj
-WOD 12min
-WORKOUT_END
-171228
-Löpning 
-Crossfit
-WORKOUT_END
-171201
-WOD
-AMRAP 20 min
-burpees
-wallballs
+1
+6787980
+iuäohpjk
 WORKOUT_END

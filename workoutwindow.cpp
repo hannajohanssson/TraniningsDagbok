@@ -32,6 +32,8 @@ workoutWindow::workoutWindow(WorkoutRegister* workouts,  QWidget *parent) :
     ui->pushButtonFindSave->hide();
     ui->labelRemove_2->hide();
     ui->labelFind_2->hide();
+    ui->pushButtonRemove->hide();
+    ui->pushButtonRemoveLatest->hide();
 
 }
 
@@ -69,6 +71,8 @@ void workoutWindow::on_pushButton_4_clicked()
     ui->pushButtonFindSave->hide();
     ui->labelRemove_2->hide();
     ui->labelFind_2->hide();
+    ui->pushButtonRemove->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 //add workout
@@ -95,6 +99,8 @@ void workoutWindow::on_pushButton_2_clicked()
     ui->pushButtonFindSave->hide();
     ui->labelRemove_2->hide();
     ui->labelFind_2->hide();
+    ui->pushButtonRemove->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 void workoutWindow::on_pushButton_save_clicked()
@@ -153,6 +159,8 @@ void workoutWindow::on_pushButtonRemove_clicked()
     ui->labelNrOfWorkouts->hide();
     ui->labelRemove_2->show();
     ui->labelFind_2->hide();
+    ui->pushButtonRemove->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 void workoutWindow::on_pushButtonRemoveSave_clicked()
@@ -201,6 +209,8 @@ void workoutWindow::on_pushButton_clicked()
     ui->labelNrOfWorkouts->hide();
     ui->labelRemove_2->hide();
     ui->labelFind_2->show();
+    ui->pushButtonRemove->hide();
+    ui->pushButtonRemoveLatest->hide();
 }
 
 void workoutWindow::on_pushButtonFindSave_clicked()
@@ -226,5 +236,93 @@ void workoutWindow::on_pushButtonFindSave_clicked()
 
         ui->listWidgetShowFound->addItem(foundWorkout);
     }
+
+}
+
+void workoutWindow::on_pushButtonRemoveLatest_clicked()
+{
+    ui->listWidgetRemoveShow->show();
+    ui->listWidgetRemoveShow->clear();
+    ui->labelShowAllWorkouts->hide();
+
+    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+        ui->listWidgetRemoveShow->addItem(workouts->getWorkout(i)->toString());
+
+
+    //ui->pushButtonRemoveSave->show();
+    //ui->labelRemove->show();
+    //ui->lineEditRemove->show();
+    ui->label_date->hide();
+    ui->label_workout->hide();
+    ui->lineEdit_date->hide();
+    ui->textEdit_WorkoutDescription->hide();
+    ui->pushButton_save->hide();
+    ui->listWidgetShowWorkouts->hide();
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->hide();
+    ui->labelFind->hide();
+    ui->pushButtonFindSave->hide();
+    ui->labelRemove_2->show();
+    ui->labelFind_2->hide();
+
+
+
+    if(workouts->getNrOfWorkouts() >0)
+    {
+        workouts->removeLatest();
+        QMessageBox::information(this, "Remove latest workout", "The latest workout has been removed.");
+        ui->listWidgetRemoveShow->clear();
+    }
+    else
+    {
+       QMessageBox::information(this, "Remove latest workout", "There are no workout added.");
+    }
+
+    ui->listWidgetRemoveShow->clear();
+
+    QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
+    ui->labelNrOfWorkouts->setText(nrOfWorkouts);
+
+    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+        ui->listWidgetRemoveShow->addItem(workouts->getWorkout(i)->toString());
+
+}
+
+void workoutWindow::on_pushButtonRemoveW_clicked()
+{
+    ui->pushButtonRemove->show();
+    ui->pushButtonRemoveLatest->show();
+    ui->pushButtonFindSave->hide();
+
+    ui->pushButtonRemoveSave->hide();
+    ui->pushButton_save->hide();
+
+    ui->listWidgetRemoveShow->show();
+    ui->listWidgetRemoveShow->clear();
+    ui->labelShowAllWorkouts->hide();
+
+    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+        ui->listWidgetRemoveShow->addItem(workouts->getWorkout(i)->toString());
+
+    QString nrOfWorkouts = "Amount of workouts this far: " + QString::number(workouts->getNrOfWorkouts());
+    ui->labelNrOfWorkouts->setText(nrOfWorkouts);
+
+
+
+    ui->pushButtonRemoveSave->hide();
+    ui->labelRemove->hide();
+    ui->lineEditRemove->hide();
+    ui->label_date->hide();
+    ui->label_workout->hide();
+    ui->lineEdit_date->hide();
+    ui->textEdit_WorkoutDescription->hide();
+    ui->pushButton_save->hide();
+    ui->listWidgetShowWorkouts->hide();
+    ui->listWidgetShowFound->hide();
+    ui->lineEditFind->hide();
+    ui->labelFind->hide();
+    ui->pushButtonFindSave->hide();
+    ui->labelRemove_2->show();
+    ui->labelFind_2->hide();
 
 }
