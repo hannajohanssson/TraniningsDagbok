@@ -124,7 +124,7 @@
   <widget class="QLabel" name="labelRemove">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>280</x>
      <y>80</y>
      <width>161</width>
      <height>16</height>
@@ -137,7 +137,7 @@
   <widget class="QLineEdit" name="lineEditRemove">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>450</x>
      <y>80</y>
      <width>113</width>
      <height>20</height>
@@ -147,8 +147,8 @@
   <widget class="QPushButton" name="pushButtonRemoveSave">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>130</y>
+     <x>480</x>
+     <y>120</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -160,8 +160,8 @@
   <widget class="QListWidget" name="listWidgetRemoveShow">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>160</y>
+     <x>270</x>
+     <y>150</y>
      <width>291</width>
      <height>301</height>
     </rect>
@@ -183,8 +183,8 @@
   <widget class="QPushButton" name="pushButtonFindSave">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>130</y>
+     <x>390</x>
+     <y>120</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -291,9 +291,9 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButtonRemove">
+     <widget class="QPushButton" name="pushButtonRemoveW">
       <property name="text">
-       <string>Remove Workout</string>
+       <string>Remove</string>
       </property>
      </widget>
     </item>
@@ -313,49 +313,51 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButtonRemoveLatest">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>330</y>
+     <x>150</x>
+     <y>120</y>
      <width>101</width>
-     <height>23</height>
+     <height>133</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Remove Latest</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonRemoveW">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>370</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Remove</string>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButtonRemove">
+      <property name="text">
+       <string>Remove Workout</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonRemoveLatest">
+      <property name="text">
+       <string>Remove Latest</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <tabstops>
   <tabstop>pushButton_4</tabstop>
   <tabstop>pushButton_2</tabstop>
-  <tabstop>pushButtonRemove</tabstop>
+  <tabstop>pushButtonRemoveW</tabstop>
   <tabstop>pushButton</tabstop>
   <tabstop>pushButton_goBack</tabstop>
-  <tabstop>listWidgetShowWorkouts</tabstop>
   <tabstop>lineEdit_date</tabstop>
-  <tabstop>lineEditRemove</tabstop>
-  <tabstop>listWidgetRemoveShow</tabstop>
+  <tabstop>textEdit_WorkoutDescription</tabstop>
   <tabstop>lineEditFind</tabstop>
   <tabstop>pushButtonFindSave</tabstop>
-  <tabstop>pushButton_save</tabstop>
-  <tabstop>textEdit_WorkoutDescription</tabstop>
-  <tabstop>listWidgetShowFound</tabstop>
+  <tabstop>lineEditRemove</tabstop>
   <tabstop>pushButtonRemoveSave</tabstop>
+  <tabstop>pushButtonRemove</tabstop>
+  <tabstop>pushButtonRemoveLatest</tabstop>
+  <tabstop>pushButton_save</tabstop>
+  <tabstop>listWidgetShowFound</tabstop>
+  <tabstop>listWidgetRemoveShow</tabstop>
+  <tabstop>listWidgetShowWorkouts</tabstop>
  </tabstops>
  <resources/>
  <connections>

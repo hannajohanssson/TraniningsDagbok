@@ -6,70 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>503</width>
-    <height>433</height>
+    <width>553</width>
+    <height>449</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="ButtonAddPR">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>81</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add PR</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ButtonShowPR">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>40</y>
-     <width>81</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Show PR</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ButtonAddPRweight">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>131</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add PR for weights</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ButtonAddPRrunning">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>100</y>
-     <width>131</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add PR for running</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="labelNama">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>2</y>
+     <x>240</x>
+     <y>12</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -86,8 +34,8 @@
   <widget class="QLabel" name="label_2Date">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>40</y>
+     <x>240</x>
+     <y>50</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -104,8 +52,8 @@
   <widget class="QLabel" name="label_3Weight">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>86</y>
+     <x>240</x>
+     <y>96</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -117,8 +65,8 @@
   <widget class="QLabel" name="label_4Reps">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>120</y>
+     <x>240</x>
+     <y>130</y>
      <width>61</width>
      <height>21</height>
     </rect>
@@ -130,8 +78,8 @@
   <widget class="QLabel" name="label_5Distance">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>90</y>
+     <x>240</x>
+     <y>100</y>
      <width>81</width>
      <height>21</height>
     </rect>
@@ -143,8 +91,8 @@
   <widget class="QLabel" name="label_6Time">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>120</y>
+     <x>240</x>
+     <y>130</y>
      <width>81</width>
      <height>21</height>
     </rect>
@@ -156,8 +104,8 @@
   <widget class="QLineEdit" name="lineEditTime">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>120</y>
+     <x>320</x>
+     <y>130</y>
      <width>113</width>
      <height>20</height>
     </rect>
@@ -166,8 +114,8 @@
   <widget class="QLineEdit" name="lineEdit_2Reps">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>120</y>
+     <x>310</x>
+     <y>130</y>
      <width>121</width>
      <height>20</height>
     </rect>
@@ -176,8 +124,8 @@
   <widget class="QLineEdit" name="lineEdit_4Weight">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>90</y>
+     <x>310</x>
+     <y>100</y>
      <width>113</width>
      <height>20</height>
     </rect>
@@ -186,8 +134,8 @@
   <widget class="QLineEdit" name="lineEdit_5Date">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>40</y>
+     <x>380</x>
+     <y>50</y>
      <width>113</width>
      <height>20</height>
     </rect>
@@ -196,8 +144,8 @@
   <widget class="QLineEdit" name="lineEdit_6Name">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>10</y>
+     <x>380</x>
+     <y>20</y>
      <width>113</width>
      <height>20</height>
     </rect>
@@ -206,8 +154,8 @@
   <widget class="QLineEdit" name="lineEdit_7Distance">
    <property name="geometry">
     <rect>
-     <x>252</x>
-     <y>90</y>
+     <x>312</x>
+     <y>100</y>
      <width>121</width>
      <height>20</height>
     </rect>
@@ -216,31 +164,18 @@
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>220</x>
      <y>70</y>
      <width>321</width>
      <height>351</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>130</y>
-     <width>81</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Go Back</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="labelPRs">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>20</y>
+     <x>230</x>
+     <y>30</y>
      <width>101</width>
      <height>41</height>
     </rect>
@@ -259,8 +194,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>150</y>
+     <x>340</x>
+     <y>160</y>
      <width>91</width>
      <height>54</height>
     </rect>
@@ -282,24 +217,11 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButtonRemove">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>200</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Remove</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButtonRemoveLatest">
    <property name="geometry">
     <rect>
-     <x>74</x>
-     <y>250</y>
+     <x>100</x>
+     <y>180</y>
      <width>91</width>
      <height>23</height>
     </rect>
@@ -308,13 +230,78 @@
     <string>Remove Latest</string>
    </property>
   </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>81</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="ButtonAddPR">
+      <property name="text">
+       <string>Add PR</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="ButtonShowPR">
+      <property name="text">
+       <string>Show PR</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonRemove">
+      <property name="text">
+       <string>Remove</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>Go Back</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>70</y>
+     <width>102</width>
+     <height>54</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QPushButton" name="ButtonAddPRweight">
+      <property name="text">
+       <string>Add PR for weights</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="ButtonAddPRrunning">
+      <property name="text">
+       <string>Add PR for running</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>ButtonAddPR</tabstop>
   <tabstop>ButtonShowPR</tabstop>
   <tabstop>ButtonAddPRweight</tabstop>
   <tabstop>ButtonAddPRrunning</tabstop>
-  <tabstop>pushButton_3</tabstop>
   <tabstop>lineEdit_6Name</tabstop>
   <tabstop>lineEdit_5Date</tabstop>
   <tabstop>lineEdit_4Weight</tabstop>
