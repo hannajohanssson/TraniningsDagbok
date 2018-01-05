@@ -8,7 +8,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QTextStream>
-#include <QCoreApplication>         //behövs??
+#include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 

@@ -2,7 +2,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QTextStream>
-#include <QCoreApplication>         //behövs??
+#include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 
@@ -31,7 +31,7 @@ int Workouts::getDate() const
 }
 
 
-void Workouts::setDate(const int date)      //om två träningspass på en dag - lägga in i två omgångar?
+void Workouts::setDate(const int date)
 {
     this->date=date;
 }

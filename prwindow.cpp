@@ -12,8 +12,6 @@ PRwindow::PRwindow(workoutBankRegister* workoutbanks, QWidget *parent) :
     this->workoutbanks = workoutbanks;
 
 
-    //läsa från fil
-    // WorkoutBanksFile
 
     ui->ButtonAddPRrunning->hide();
     ui->ButtonAddPRweight->hide();

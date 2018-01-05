@@ -24,13 +24,6 @@ public:
     QString toStringSpecificFile() const;
     QString ToStringSaveToFile() const;
 
-
-
-
-    //jämföra vikter
-    //bool operator==(int weight) const;
-
-    //bool addWorkoutWeight(int weight, int reps);
  };
 
 

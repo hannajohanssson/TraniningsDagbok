@@ -20,11 +20,10 @@ private:
     workoutBank** workoutbanks;
     int capacity;
     int nrOfWorkouts;
-    int Find(const workoutBank& workout) const;     //använda för att sortera/lägga till i meriter
+    int Find(const workoutBank& workout) const;
     void Expand();
 
 public:
-//    workoutBankRegister();  //behövs tom??
     workoutBankRegister(int capacity = 10);
     ~workoutBankRegister();
 
@@ -38,13 +37,6 @@ public:
     void readFromFile(QString fileName);
     QString ToStringAllSaveToFile() const;
 
-    //int FindWorkout(QString& name, QString& date);
-
-    //lägga till funktioner här som sorterar efter namn och vikt tex
-   //QString SortedWeights() const; //skicka in vad?
-//    QString SortedRunninng() const;
-
-
     bool allWorkoutWeightAsString(QString* stringArr, int capacityOfStringArr) const;
     bool allWorkoutRunningAsString(QString* stringArr, int capacityOfStringArr) const;
 
@@ -53,7 +45,7 @@ public:
     workoutBank* getPR(int index);
 
     int getNrOfWorkoutsPR() const;
-    int getNrOfWorkoutsWeight() const;      //behövs?
+    int getNrOfWorkoutsWeight() const;
     int getNrOfWorkoutsRunning() const;
 
 

@@ -51,9 +51,16 @@ void workoutWindow::on_pushButton_4_clicked()
 
     ui->listWidgetShowWorkouts->show();
 
-    //ui->listWidgetShowWorkouts->addItem(workouts->toString());
-    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+    //ui->listWidgetShowWorkouts->addItem(workouts->toString());    //Visar allt som en enhet
+
+    //Visar arrayens ordning = första träningspasset visas först
+//    for(int i = 0; i < workouts->getNrOfWorkouts(); i++)
+//        ui->listWidgetShowWorkouts->addItem(workouts->getWorkout(i)->toString());
+
+    //visar senaste först
+    for(int i = workouts->getNrOfWorkouts() -1; i >= 0; i--)
         ui->listWidgetShowWorkouts->addItem(workouts->getWorkout(i)->toString());
+
 
 
     ui->listWidgetRemoveShow->hide();

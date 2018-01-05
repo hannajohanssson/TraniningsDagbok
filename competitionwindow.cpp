@@ -63,15 +63,6 @@ void CompetitionWindow::on_pushButtonShow_clicked()
 {
     ui->RubrikAllComp->show();
     ui->listWidgetShowCompetitions->clear();
-//    QString description1 = "1: 60 cal AB, 50 synced wallbaalls, 40 dumbell snatches, 30 goblet suats."
-//                           "\n2:5 Deadlifts 115kg, 5 pullups, 5 T2B, 1 ropeclimb. Adding 5 each round."
-//                           "\n3:A/ 1RM powerclean + 3front squats"
-//                           "\n  B/ 4 rounds: 20 cal row, 20 burpee boxjump over, 5 high snatch, 3 OHS.\n";
-//    QString name1 = "Juleböj";
-//    CompetitionRegister c1;
-//    c1.addCompetition(171210, name1, 3, 8, description1);
-//    ui->listWidgetShowCompetitions->addItem(c1.toString());
-
     ui->listWidgetShowCompetitions->show();
     for(int i = 0; i < competitions->getNrOfWorkouts(); i++)
         ui->listWidgetShowCompetitions->addItem(competitions->getCompetition(i)->toString());

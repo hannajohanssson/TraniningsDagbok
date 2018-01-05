@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 
-#include "workouts.h"  //behövs det?
+#include "workouts.h"
 #include "workoutwindow.h"
 #include "workoutregister.h"
 #include "workoutbankregister.h"

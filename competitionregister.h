@@ -6,17 +6,12 @@
 #include <QFile>
 #include <QDebug>
 #include <QTextStream>
-#include <QCoreApplication>         //behövs??
+#include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 
 #include <QObject>
 #include <QWidget>
-
-//#include <QtAlgorithms>
-//#include <algorithm>		//istället för att själv skriva swap-funktionen
-
-
 
 
 class CompetitionRegister
@@ -50,16 +45,6 @@ public:
 
     int bestPlacement() const;
     QString bestPlacementString() const;
-
-
-
-
-    //sortera tävlingar efter finalplace - ha i competitionregister
-    //QString sortedByPlace() const;
-
-
-
-
 
 };
 

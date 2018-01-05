@@ -26,7 +26,7 @@ public:
     QString toStringSpecificFile() const;
     QString ToStringSaveToFile() const;
 
-    //sortera efter distans och sen tid
+
 };
 
 

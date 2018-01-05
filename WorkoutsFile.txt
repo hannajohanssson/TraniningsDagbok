@@ -1,1 +1,96 @@
-0
+17
+171202
+Löpning 10km
+WORKOUT_END
+171203
+Benböj 5*10 reps upp till 70 kg
+20 min AMRAP 
+Burpees
+Wallballs
+Löpning
+WORKOUT_END
+171205
+Crossfit 1h
+WORKOUT_END
+171206
+Crossfit 1h
+Marklyft
+Pushpress
+CINDY
+WORKOUT_END
+171210
+Intervaller 30 min
+Cirkelfys 30 min 
+WORKOUT_END
+171211
+CF 2h
+Styrka 1h
+Kondition 45 min
+Rehab
+WORKOUT_END
+171213
+Lucia-WOD 50 min
+WORKOUT_END
+171214
+Spinning 1h
+WORKOUT_END
+171217
+Böj 
+Mark
+Pressar
+30 min AMRAP 
+böj
+pc
+burpees
+AB
+WORKOUT_END
+171219
+Intervaller AB 30 min
+AMRAP 30 min lugnt tempo
+löpning
+airsquats
+superman
+boxjumps
+situps
+WORKOUT_END
+171221
+Löpning 5 km
+Promenad 30 min
+Löpning 4 km
+Stretch
+Runt 2h
+WORKOUT_END
+171225
+Badminton 2h
+WORKOUT_END
+171226
+Crossfit 2h
+Marklyft 5 set x 10 reps + maklyft
+FRAN
+DIANE
+WORKOUT_END
+171230
+Löpning, återhämtningspass 1h
+WORKOUT_END
+180102
+CF 1h
+Strikta T2B
+AMRAP 13 min
+13 wallballs
+13 STOH
+13 T2B
+WORKOUT_END
+180104
+Marklyft 5 * 8 reps upp till 65kg
+EMOM 15 min
+1: 8 situps
+2: 8 marklyft 55kg
+WORKOUT_END
+180105
+Teamwod
+50 Buddy burpees
+100 Pullups
+100 Airsquatts
+100 Pushups
+50 Buddy Burpees
+WORKOUT_END

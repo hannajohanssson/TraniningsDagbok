@@ -179,21 +179,3 @@ QString CompetitionRegister::bestPlacementString() const
 }
 
 
-
-//QString CompetitionRegister::sortedByPlace() const
-//{
-//    QString retstring;
-//    int index = 1000;
-//    for(int i=0; i<nrOfCompetitions; i++)
-//    {
-//        if (competitions->getFinalPlace() < index)
-//        {
-
-//        }
-
-
-//    }
-//    return retstring;
-//}
-
-
